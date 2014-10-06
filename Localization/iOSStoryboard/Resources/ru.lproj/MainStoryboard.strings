@@ -1,0 +1,11 @@
+"35.title" = "левTodo";					/* LionTodo (Navigation title) */
+"My4-ws-Xah.title" = "Описание задачи";		/* Task Details (Navigation title) */
+
+"SXg-TT-IwM.placeholder" = "Наименование задачи";   	/* task name */
+"Pqa-aa-ury.placeholder"= "Дополнительная информация"; /* other task info */
+
+"zwR-D9-hM1.text" = "Описание задачи"; 		/* Task Details */
+"bAM-2j-Rzw.text" = "Заметки"; 				/* Notes */
+"NF3-h8-xmR.text" = "Готово"; 				/* Done * 
+"MWt-Ya-pMf.normalTitle" = "Сохранить"; 			/* Save */
+"IGr-pR-05L.normalTitle" = "Удалить"; 		/* Delete*/

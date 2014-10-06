@@ -1,0 +1,14 @@
+/* thanks @migueldeicaza https://gist.github.com/migueldeicaza/95fbc0715cd1e3a77997 */
+
+"LionTodo" = "LeónTodo";
+
+"<new task>" = "<nueva tarea>";
+
+"Task Details" = "Detalles de la tarea";
+"Name" = "Nombre";
+"task name" = "nombre de la tarea";
+"Notes" = "Notas";
+"other task info"= "﻿otra información";
+"Done" = "Completa";
+"Save" = "Guarda";
+"Delete" = "Borra";

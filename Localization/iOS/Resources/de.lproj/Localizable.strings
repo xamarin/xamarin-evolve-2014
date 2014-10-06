@@ -1,0 +1,14 @@
+/* thanks @jessmichele  */
+
+"LionTodo" = "LöweTodo";
+
+"<new task>" = "<neue Aufgabe>";
+
+"Task Details" = "Aufgabendetails";
+"Name" = "Name";
+"task name" = "Aufgabenname";
+"Notes" = "Aufzeichnungen";
+"other task info"= "andere Aufgabeninformationen";
+"Done" = "Fertig"; /*(or fertig stellen)*/
+"Save" = "Speichern";
+"Delete" = "Löschen";

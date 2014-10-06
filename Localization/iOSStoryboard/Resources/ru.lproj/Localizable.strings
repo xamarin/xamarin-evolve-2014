@@ -1,0 +1,14 @@
+/* thanks @vpolushkin https://gist.github.com/valpolushkin/7420c8ca0a32e1aa0403 */
+
+"LionTodo" = "левTodo";
+ 
+"<new task>" = "<Новая задача>";
+ 
+"Task Details" = "Описание задачи";
+"Name" = "Наименование"; /* "Имя" for a person, "Наименование" for things */
+"task name" = "Наименование задачи";
+"Notes" = "Заметки";
+"other task info"= "Дополнительная информация";
+"Done" = "Готово";
+"Save" = "Сохранить";
+"Delete" = "Удалить";

@@ -1,0 +1,16 @@
+/* thanks @away https://gist.github.com/away24/8986813 */
+
+/* TRADITIONAL */
+
+"LionTodo" = "LionTodo";
+ 
+"<new task>" = "<新工作>";
+ 
+"Task Details" = "工作內容";
+"Name" = "名稱";
+"task name" = "工作名稱";
+"Notes" = "筆記";
+"other task info"= "其他工作信息";
+"Done" = "完成";
+"Save" = "保存";
+"Delete" = "刪除";

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08A1E777-C427-42A1-9DB4-F7C9105E389B}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LionTodo</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>True</MtouchProfiling>
+    <MtouchLink>None</MtouchLink>
+    <AssemblyName>L10nStoryboard</AssemblyName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <AssemblyName>L10nStoryboard</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchProfiling>True</MtouchProfiling>
+    <AssemblyName>StoryboardTables</AssemblyName>
+    <IpaPackageName>
+    </IpaPackageName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <AssemblyName>StoryboardTables</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="SQLite">
+      <HintPath>Components\sqlite-net-1.0.1\lib\ios\SQLite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="TodoTableSource.cs" />
+    <Compile Include="Core\Todo.cs" />
+    <Compile Include="Core\TodoDatabase.cs" />
+    <Compile Include="Base.lproj\TodoListViewController.cs" />
+    <Compile Include="Base.lproj\TodoListViewController.designer.cs">
+      <DependentUpon>TodoListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base.lproj\TodoViewController.cs" />
+    <Compile Include="Base.lproj\TodoViewController.designer.cs">
+      <DependentUpon>TodoViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lion.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Base.lproj\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Core\" />
+    <Folder Include="Resources\de.lproj\" />
+    <Folder Include="Resources\fr.lproj\" />
+    <Folder Include="Resources\pt.lproj\" />
+    <Folder Include="Resources\ru.lproj\" />
+    <Folder Include="Resources\zh-Hans.lproj\" />
+    <Folder Include="Resources\zh-Hant.lproj\" />
+    <Folder Include="Resources\pt-PT.lproj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Info.plist" />
+    <BundleResource Include="Resources\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\es.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\es.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\ja.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Resources\de.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\de.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\de.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\de.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\fr.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\fr.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\fr.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\fr.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\pt.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\pt.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\pt.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\pt.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ru.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\ru.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\ru.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\ru.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\zh-Hans.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\zh-Hans.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\zh-Hant.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\zh-Hant.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\ja.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\ja.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\es.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\es.lproj\Default.png" />
+    <BundleResource Include="Resources\es.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\ja.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\fr.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\ja.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\de.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\pt.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\ru.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\en.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\zh-Hans.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\zh-Hant.lproj\MainStoryboard.strings" />
+    <BundleResource Include="Resources\pt-PT.lproj\Default-568h%402x.png" />
+    <BundleResource Include="Resources\pt-PT.lproj\Default%402x.png" />
+    <BundleResource Include="Resources\pt-PT.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\pt-PT.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\pt-PT.lproj\MainStoryboard.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="sqlite-net">
+      <Version>1.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Base.lproj\MainStoryboard.storyboard" />
+  </ItemGroup>
+</Project>

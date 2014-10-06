@@ -1,0 +1,14 @@
+/* @vpolushkin https://gist.github.com/valpolushkin/d0b4c0e860d5fe5ad475 */
+
+"LionTodo" = "LionTodo";
+ 
+"<new task>" = "Nouvelle tâche";
+ 
+"Task Details" = "Détails sur la tâche";
+"Name" = "Nom";
+"task name" = "Nom de la tâche";
+"Notes" = "Notes";
+"other task info"= "Informations supplémentaires sur la tâche";
+"Done" = "Terminer";
+"Save" = "Enregistrer";
+"Delete" = "Supprimer";

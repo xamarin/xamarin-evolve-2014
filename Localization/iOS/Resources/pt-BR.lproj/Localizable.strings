@@ -1,0 +1,14 @@
+/* @vdepizzol https://gist.github.com/vdepizzol/97f3df3a6fd4b7b9e727 */
+
+"LionTodo" = "LeãoTodo";
+ 
+"<new task>" = "<nova tarefa>";
+ 
+"Task Details" = "Detalhes da Tarefa";
+"Name" = "Nome";
+"task name" = "nome da tarefa";
+"Notes" = "Observações";
+"other task info"= "outras informações da tarefa";
+"Done" = "Pronto";
+"Save" = "Salvar";
+"Delete" = "Excluir";

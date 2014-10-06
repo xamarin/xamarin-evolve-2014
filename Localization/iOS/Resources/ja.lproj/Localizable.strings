@@ -1,0 +1,15 @@
+/* MACHINE TRANSLATION : apologies for any mistakes */
+
+"LionTodo" = "ライオンTodo";
+
+/* placeholder text in textview */
+"<new task>" = "<新しいタスク>";
+
+"Task Details" = "タスクの詳細";
+"Name" = "タイトル";
+"task name" = "タスク名";
+"Notes" = "注釈";
+"other task info"= "﻿他のタスクの情報";
+"Done" = "削除する";
+"Save" = "はい";
+"Delete" = "削除する";

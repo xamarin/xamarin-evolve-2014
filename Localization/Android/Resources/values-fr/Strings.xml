@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">AndroidTodo</string>
+	<string name="Hello">Hello World, Click Me!</string>
+	<string name="ApplicationName">AndroidTodo</string>
+
+
+	<string name="AppName">LionTodo</string>
+	<string name="NewTaskPlaceholder">&lt;Nouvelle tâche&gt;</string>
+	<string name="NameLabel">Nom</string>
+	<string name="NamePlacholder">Nom de la tâche</string>
+	<string name="NotesLabel">Notes</string>
+	<string name="NotesPlaceholder">Informations supplémentaires sur la tâche</string>
+	<string name="DoneLabel">Terminer</string>
+	<string name="SaveButton">Enregistrer</string>
+	<string name="DeleteButton">Supprimer</string>
+	<string name="AddButton">Add tâche</string>
+
+</resources>

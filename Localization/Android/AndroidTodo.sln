@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTodo", "AndroidTodo.csproj", "{615E9D9F-71F5-46D1-8A88-8C3714DD3490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615E9D9F-71F5-46D1-8A88-8C3714DD3490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AndroidTodo.csproj
+	EndGlobalSection
+EndGlobal
