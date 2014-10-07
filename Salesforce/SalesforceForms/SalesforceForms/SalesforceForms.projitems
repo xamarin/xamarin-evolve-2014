@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{5DDDF930-D719-406B-813A-9E94C52A5104}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SalesforceForms</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RootPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SObjects\AccountObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SObjects\ProductObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AccountsList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ProductList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AccountDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AccountViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PropertyHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AccountCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ProductDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Search.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RootPageSalesforceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SObjects\MonkeyObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MonkeyList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)SObjects\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SalesforceForms", "SalesforceForms\SalesforceForms.shproj", "{5DDDF930-D719-406B-813A-9E94C52A5104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesforceForms.iOS", "iOS\SalesforceForms.iOS.csproj", "{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesforceForms.Android", "Android\SalesforceForms.Android.csproj", "{6BA225C9-4367-4533-B87D-3CC32E0E43C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Debug|iPhone.Build.0 = Debug|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Release|iPhone.ActiveCfg = Release|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Release|iPhone.Build.0 = Release|iPhone
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{5B8BA2DB-3D31-4FFF-8607-4C75B3D514A7}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Release|iPhone.Build.0 = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6BA225C9-4367-4533-B87D-3CC32E0E43C1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = iOS\SalesforceForms.iOS.csproj
+	EndGlobalSection
+EndGlobal

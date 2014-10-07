@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Text"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dip">
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFffffff"
+        android:textSize="20dip"
+        android:textStyle="italic"
+        android:text="Label"
+        android:minWidth="200dp" />
+    <TextView
+        android:id="@+id/Text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:textColor="#FFcccccc"
+        android:paddingLeft="10dip"
+        android:text="Value"
+        android:layout_marginRight="00.0dp"
+        android:inputType="textNoSuggestions"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50.0dp"
+        android:layout_below="@id/Text1"
+        android:gravity="right" />
+</RelativeLayout>

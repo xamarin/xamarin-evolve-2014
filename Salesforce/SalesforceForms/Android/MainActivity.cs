@@ -1,0 +1,33 @@
+﻿using System;
+
+using Android.App;
+using Android.Content;
+using Android.Content.PM;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+
+using Xamarin.Forms.Platform.Android;
+
+
+namespace SalesforceForms.Android
+{
+	[Activity (Label = "SalesforceForms.Android.Android", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : AndroidActivity
+	{
+		protected override void OnCreate (Bundle bundle)
+		{
+			base.OnCreate (bundle);
+
+			Xamarin.Forms.Forms.Init (this, bundle);
+
+			var page = App.GetMainPage () as RootPage;
+
+			SetPage (page);
+
+			page.InitializeSalesforce (Xamarin.Forms.Forms.Context);
+		}
+	}
+}
+

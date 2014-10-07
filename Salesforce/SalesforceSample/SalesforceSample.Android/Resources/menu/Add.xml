@@ -1,0 +1,5 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/add" android:orderInCategory="101" android:showAsAction="always" android:title="Add"></item>
+
+</menu>
