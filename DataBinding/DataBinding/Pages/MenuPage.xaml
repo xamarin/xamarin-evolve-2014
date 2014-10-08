@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:DataBinding;assembly=DataBinding"
+	x:Class="DataBinding.MenuPage">
+
+	<ContentPage.Resources>
+    	<ResourceDictionary>
+
+      <!-- This is only an issue on the iPhone; Android and 
+           WinPhone auto size the row height to the contents. -->
+      		<OnPlatform x:Key="rowHeight" 
+                  x:TypeArguments="x:Int32"
+                  iOS="85"
+                  Android="85"
+                  WinPhone="85" />
+ 
+      		<local:DoubleToIntConverter x:Key="intConverter" />
+
+      		<x:String x:Key="CaptionFont">Bold,16</x:String>
+			<x:String x:Key="BackgroundColor">#3B99D4</x:String>
+			<x:String x:Key="ForegroundColor">#F6F3E7</x:String>
+      
+    	</ResourceDictionary>
+  	</ContentPage.Resources>
+
+	<ContentPage.BackgroundColor>#15304E</ContentPage.BackgroundColor>
+
+	<ListView x:Name="MenuList" ItemsSource="{Binding MenuOptions}"
+            RowHeight="{StaticResource rowHeight}"
+            BackgroundColor="{StaticResource BackgroundColor}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+            <StackLayout Padding="5, 5, 0, 5"
+                         Orientation="Horizontal"
+                         Spacing="15"
+                         BackgroundColor="{StaticResource BackgroundColor}">
+              
+              <Image HeightRequest="80" Aspect="AspectFit" Source="{Binding ImageUrl}"/>
+ 
+              <StackLayout Padding="5, 0, 0, 0"
+                           VerticalOptions="Center">
+                
+                <Label Text="{Binding MenuOptionTitle}"
+                    Font="{StaticResource CaptionFont}" 
+                    BackgroundColor="{StaticResource BackgroundColor}" 
+					TextColor="{StaticResource ForegroundColor}"/>
+
+              </StackLayout>
+            </StackLayout>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>

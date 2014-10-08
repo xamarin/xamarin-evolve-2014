@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Evan</string>
+	<key>conversations</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Nathan</string>
+			<key>photos</key>
+			<array>
+				<dict>
+					<key>imageName</key>
+					<string>b01</string>
+					<key>comment</key>
+					<string>A monkey in a tree</string>
+					<key>rating</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Tori</string>
+			<key>photos</key>
+			<array>
+				<dict>
+					<key>imageName</key>
+					<string>p01</string>
+					<key>comment</key>
+					<string>What a cool monkey!</string>
+					<key>rating</key>
+					<integer>4</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Matt</string>
+			<key>photos</key>
+			<array>
+				<dict>
+					<key>imageName</key>
+					<string>j01</string>
+					<key>comment</key>
+					<string>Monkeys in the water</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>imageName</key>
+					<string>j02</string>
+					<key>comment</key>
+					<string>Climbing a tree</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>imageName</key>
+					<string>j03</string>
+					<key>comment</key>
+					<string>Monkey in the snow</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Kathy</string>
+			<key>photos</key>
+			<array>
+				<dict>
+					<key>imageName</key>
+					<string>d01</string>
+					<key>comment</key>
+					<string>Gorgeous little monkey</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>imageName</key>
+					<string>d02</string>
+					<key>comment</key>
+					<string>Baby monkeys!</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Lisa</string>
+			<key>photos</key>
+			<array>
+				<dict>
+					<key>imageName</key>
+					<string>l01</string>
+					<key>comment</key>
+					<string>Sleeping monkey</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>imageName</key>
+					<string>l02</string>
+					<key>comment</key>
+					<string>Tamarin Monkey!</string>
+					<key>rating</key>
+					<integer>3</integer>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>lastPhoto</key>
+	<dict>
+		<key>imageName</key>
+		<string>z01</string>
+		<key>comment</key>
+		<string>A nice cliff!</string>
+		<key>rating</key>
+		<integer>3</integer>
+	</dict>
+</dict>
+</plist>

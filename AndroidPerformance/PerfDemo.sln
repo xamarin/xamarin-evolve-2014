@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1-PerfDemoAsync", "PerfDemoAsync\1-PerfDemoAsync.csproj", "{EEF475B8-75BE-4B1B-B7C7-FAB6FE6D6481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-PerfDemoGC", "PerfDemoGC\2-PerfDemoGC.csproj", "{94572A2B-0F8B-4606-A1D8-724268AB94ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-PerfDemoListView", "PerfDemoListView\3-PerfDemoListView.csproj", "{38C02D94-EDD9-4870-82A7-BF1701D48745}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-PerfDemoViewHolder", "PerfDemoViewHolder\4-PerfDemoViewHolder.csproj", "{64DA1561-8586-4969-9886-1D1C8018CFBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38C02D94-EDD9-4870-82A7-BF1701D48745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C02D94-EDD9-4870-82A7-BF1701D48745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C02D94-EDD9-4870-82A7-BF1701D48745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C02D94-EDD9-4870-82A7-BF1701D48745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64DA1561-8586-4969-9886-1D1C8018CFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DA1561-8586-4969-9886-1D1C8018CFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DA1561-8586-4969-9886-1D1C8018CFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DA1561-8586-4969-9886-1D1C8018CFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94572A2B-0F8B-4606-A1D8-724268AB94ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94572A2B-0F8B-4606-A1D8-724268AB94ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94572A2B-0F8B-4606-A1D8-724268AB94ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94572A2B-0F8B-4606-A1D8-724268AB94ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF475B8-75BE-4B1B-B7C7-FAB6FE6D6481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF475B8-75BE-4B1B-B7C7-FAB6FE6D6481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF475B8-75BE-4B1B-B7C7-FAB6FE6D6481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF475B8-75BE-4B1B-B7C7-FAB6FE6D6481}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = PerfDemoViewHolder\4-PerfDemoViewHolder.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingAndroidLab_demo1", "MappingAndroidLab_demo1\MappingAndroidLab_demo1.csproj", "{E63CDEAB-316D-4B0B-B092-2E3F83266943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingAndroidLab_demo2", "MappingAndroidLab_demo2\MappingAndroidLab_demo2.csproj", "{F90A7E6E-B5C5-4518-9ECA-61D2498C8E8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingAndroidLab_demo3", "MappingAndroidLab_demo3\MappingAndroidLab_demo3.csproj", "{E3A5584D-3675-42DF-ADC2-CBF4143A4C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingAndroidLab_demo4", "MappingAndroidLab_demo4\MappingAndroidLab_demo4.csproj", "{C94006AD-7659-442B-BA02-B96A140824A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C94006AD-7659-442B-BA02-B96A140824A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94006AD-7659-442B-BA02-B96A140824A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94006AD-7659-442B-BA02-B96A140824A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94006AD-7659-442B-BA02-B96A140824A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A5584D-3675-42DF-ADC2-CBF4143A4C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A5584D-3675-42DF-ADC2-CBF4143A4C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A5584D-3675-42DF-ADC2-CBF4143A4C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A5584D-3675-42DF-ADC2-CBF4143A4C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63CDEAB-316D-4B0B-B092-2E3F83266943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63CDEAB-316D-4B0B-B092-2E3F83266943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63CDEAB-316D-4B0B-B092-2E3F83266943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63CDEAB-316D-4B0B-B092-2E3F83266943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90A7E6E-B5C5-4518-9ECA-61D2498C8E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90A7E6E-B5C5-4518-9ECA-61D2498C8E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90A7E6E-B5C5-4518-9ECA-61D2498C8E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90A7E6E-B5C5-4518-9ECA-61D2498C8E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MappingAndroidLab_demo4\MappingAndroidLab_demo4.csproj
+	EndGlobalSection
+EndGlobal

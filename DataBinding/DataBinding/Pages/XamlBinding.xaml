@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:local="clr-namespace:DataBinding;assembly=DataBinding"
+	x:Class="DataBinding.XamlBinding"
+	Title="{Binding SeriesName}">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+
+			<OnPlatform x:Key="CaptionFont"
+                  x:TypeArguments="Font"
+                  iOS="MarkerFelt-Thin,Bold,16"
+                  Android="Droid Sans Mono,Bold,16"
+                  WinPhone="Comic Sans MS,Bold,16" />
+
+			<x:String x:Key="BackgroundColor">#3B99D4</x:String>
+			<x:String x:Key="ForegroundColor">#F6F3E7</x:String>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.BackgroundColor>#3B99D4</ContentPage.BackgroundColor>
+
+	<ScrollView>
+		<StackLayout Spacing="2">
+			<StackLayout.Padding>
+				<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+			</StackLayout.Padding>
+
+			<Image HeightRequest="150" Aspect="AspectFit" Source="{Binding ImageSmall}"/>
+
+			<Label Text="{x:Static local:Language.SeriesNumber}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}"/>
+
+			<Entry Text="{Binding SeriesNumber, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.SeriesName}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding SeriesName, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Writer}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Writer, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Penciller}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Penciller, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Inker}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Inker, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Colorist}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Colorist, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Letterer}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Letterer, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Editor}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Editor, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.StoryTitle}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding StoryTitle, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Character}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Character, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.ISBN}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding ISBN, Mode=TwoWay}" />
+
+			<Label Text="{x:Static local:Language.Barcode}" 
+				Font="{StaticResource CaptionFont}" 
+				BackgroundColor="{StaticResource BackgroundColor}" 
+				TextColor="{StaticResource ForegroundColor}" />
+
+			<Entry Text="{Binding Barcode, Mode=TwoWay}" />
+
+		</StackLayout>
+	</ScrollView>
+</ContentPage>
+
+<!--				<x:String x:Key="CaptionFont">MarkerFelt-Thin,Bold,16</x:String>-->
