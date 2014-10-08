@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:WebServices;assembly=WebServices"
+	x:Class="WebServices.TranslatePage">
+	<StackLayout>
+		<StackLayout.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="20, 20, 20, 20" Android="20, 0, 20, 20"/>
+		</StackLayout.Padding>
+
+		<!-- Connectivity -->
+		<local:ConnectivityView x:Name="connectivityIndicator"/>
+
+		<!-- The text to translate -->
+		<Label Text="Let me translate this:"/>
+		<Entry x:Name="txtSource" Text="{Binding SourceText}" />
+
+		<!-- The source language -->
+		<Label Text="from"/>
+		<Picker x:Name="pickerFrom">
+			<Picker.Items>
+				<x:String>English - en</x:String>
+				<x:String>German - de</x:String>
+				<x:String>French - fr</x:String>
+			</Picker.Items>
+		</Picker>
+
+		<!-- The destination language -->
+		<Label Text="to"/>
+		<Picker x:Name="pickerTo">
+			<Picker.Items>
+				<x:String>English - en</x:String>
+				<x:String>German - de</x:String>
+				<x:String>French - fr</x:String>
+			</Picker.Items>
+		</Picker>
+
+		<!-- Show some activity while calling the server -->
+		<ActivityIndicator x:Name="activityIndicator" IsEnabled="false" IsRunning="false"/>
+
+		<!-- The resulting translation -->
+		<Label x:Name="lblTranslation"/>
+	</StackLayout>
+</ContentPage>

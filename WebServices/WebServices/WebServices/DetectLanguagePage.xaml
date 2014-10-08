@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="WebServices.DetectLanguagePage">
+	<StackLayout>
+		<StackLayout.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="20, 20, 20, 20" Android="20, 0, 20, 20"/>
+		</StackLayout.Padding>
+
+		<!-- The text to translate -->
+		<Label Text="Challenge me:"/>
+		<Entry x:Name="txtSource" Text="{Binding SourceText}" />
+
+		<!-- Show some activity while calling the server -->
+		<ActivityIndicator x:Name="activityIndicator" IsEnabled="false" IsRunning="false"/>
+
+		<!-- The detected language -->
+		<Label x:Name="lblLanguage"/>
+	</StackLayout>
+</ContentPage>
+	

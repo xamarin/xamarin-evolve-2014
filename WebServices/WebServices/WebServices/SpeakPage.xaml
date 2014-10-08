@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WebServices.SpeakPage">
+	<StackLayout>
+		<StackLayout.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="20, 20, 20, 20" Android="20, 0, 20, 20"/>
+		</StackLayout.Padding>
+
+		<!-- The text to speak -->
+		<Label Text="Let me tell you this:"/>
+		<Entry x:Name="txtSource" Text="{Binding SourceText}" />
+
+		<!-- The language -->
+		<Label Text="in"/>
+		<Picker x:Name="pickerLang">
+			<Picker.Items>
+				<x:String>English - en</x:String>
+				<x:String>German - de</x:String>
+				<x:String>French - fr</x:String>
+			</Picker.Items>
+		</Picker>
+
+		<!-- Show some activity while calling the server -->
+		<ActivityIndicator x:Name="activityIndicator" IsEnabled="false" IsRunning="false"/>
+
+		<!-- Button to start speaking -->
+		<Button x:Name="btnSpeak" Clicked="HandleSpeakClick" Text="Say it!"/>
+	</StackLayout>
+</ContentPage>

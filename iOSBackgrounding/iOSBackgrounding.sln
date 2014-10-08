@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 Location Updates", "iOSBackgrounding\02 Location Updates.csproj", "{88753195-B7AC-4F3E-B564-D97065892719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 Apple Pi", "LongRunningTasks\01 Apple Pi.csproj", "{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 FileTransfer", "FileTransfer\03 FileTransfer.csproj", "{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Debug|iPhone.Build.0 = Debug|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Release|iPhone.ActiveCfg = Release|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Release|iPhone.Build.0 = Release|iPhone
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{57332EA6-E7F8-4EF1-BBC1-66E762CB83C5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Debug|iPhone.Build.0 = Debug|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Release|iPhone.ActiveCfg = Release|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Release|iPhone.Build.0 = Release|iPhone
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{6C7BCDF2-35D8-4C65-A91B-EB120C2E4534}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{88753195-B7AC-4F3E-B564-D97065892719}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.Debug|iPhone.Build.0 = Debug|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{88753195-B7AC-4F3E-B564-D97065892719}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{88753195-B7AC-4F3E-B564-D97065892719}.Release|iPhone.ActiveCfg = Release|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.Release|iPhone.Build.0 = Release|iPhone
+		{88753195-B7AC-4F3E-B564-D97065892719}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{88753195-B7AC-4F3E-B564-D97065892719}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = iOSBackgrounding\02 Location Updates.csproj
+	EndGlobalSection
+EndGlobal

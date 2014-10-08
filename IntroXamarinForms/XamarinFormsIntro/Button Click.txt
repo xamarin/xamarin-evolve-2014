@@ -1,0 +1,5 @@
+﻿// Add a click event handler to the button.
+btn.Clicked += (sender, e) => {
+	// By adding elements to the observable collection, the ListView will update itself.
+	awesomeItems.Add(string.Format("{0} - {1}", index + 1, data[index++ % data.Length]));
+};

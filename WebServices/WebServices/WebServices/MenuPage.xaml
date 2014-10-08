@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WebServices.MenuPage">
+	<StackLayout>
+		<StackLayout.Padding>
+			<OnPlatform x:TypeArguments="Thickness" iOS="20, 20, 20, 20" Android="20, 0, 20, 20"/>
+		</StackLayout.Padding>
+		<Button x:Name="btnTranslatePage" Text="Translation Demo" Clicked="HandleMenuClick"/>	
+		<Button x:Name="btnDetectLanguagePage" Text="Language Detection Demo" Clicked="HandleMenuClick"/>	
+		<Button x:Name="btnSpeakPage" Text="Audio Conversion Demo" Clicked="HandleMenuClick"/>	
+	</StackLayout>
+</ContentPage>

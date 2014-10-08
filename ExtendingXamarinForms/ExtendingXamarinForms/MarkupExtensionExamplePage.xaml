@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:dd="clr-namespace:ExtendingXamarinForms;assembly=ExtendingXamarinForms"
+	x:Class="ExtendingXamarinForms.MarkupExtensionExamplePage"
+	Title="Markup Example">
+	<ContentPage.Content>
+		<StackLayout Padding="20">
+			<Label Text="Lets have a look at a custom extension"></Label>
+			<Label Text="The date should be:"></Label>
+			<Label Text="{dd:DateDisplay Date, Binding=Yes}"></Label>
+			<Label Text="The time should be:"></Label>
+			<Label Text="{dd:DateDisplay Time}"></Label>
+			<Label Text="Anything else should be:"></Label>
+			<Label Text="{dd:DateDisplay AnotherValue}"></Label>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

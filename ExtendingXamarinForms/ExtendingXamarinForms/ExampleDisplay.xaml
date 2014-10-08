@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:xxf="clr-namespace:ExtendingXamarinForms;assembly=ExtendingXamarinForms"
+	x:Class="ExtendingXamarinForms.ExampleDisplay" Title="Renderer">
+		<StackLayout Padding="20" Spacing="20">
+
+            <xxf:RoundedBoxView x:Name="rbv" WidthRequest="200" HeightRequest="200"
+                Stroke="Yellow" StrokeThickness="2" CornerRadius="20"
+                Color="Red" />
+
+            <Label Text="Corner Radius" />
+            <Slider x:Name="theSlider" Minimum="0" Maximum="75" 
+                BindingContext="{x:Reference rbv}"
+                Value="{Binding CornerRadius, Mode=OneWayToSource}" />
+
+            <Label Text="Has Shadow" />
+            <Switch BindingContext="{x:Reference rbv}"
+                IsToggled="{Binding HasShadow, Mode=OneWayToSource}" />
+
+        </StackLayout>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Class="MobileData.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:MobileData;assembly=MobileData"
+    Title="Checkbook">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolToColorConverter x:Key="bool2Color" TrueColor="#50c0f0c0" FalseColor="Default" />
+            <local:CurrencyToColorConverter x:Key="currToColor" TrueColor="Green" FalseColor="Red" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="+" Command="{Binding AddNewCheck}" />
+        <ToolbarItem Name="Path" Activated="OnShowFilePath" />
+    </ContentPage.ToolbarItems>
+
+    <ListView ItemsSource="{Binding Register}" 
+              SelectedItem="{Binding SelectedCheck, Mode=TwoWay}"
+              ItemTapped="OnCheckTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="5" RowSpacing="5" ColumnSpacing="5"
+                          BackgroundColor="{Binding Cleared, Converter={StaticResource bool2Color}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Font="Micro" TextColor="#c0c0c0" YAlign="End"
+                                Grid.Column="0" Grid.Row="1"
+                                Text="{Binding Date, StringFormat='{0:D}'}" />
+
+                        <Label Font="Medium" YAlign="Start"
+                                Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                Text="{Binding Payee}" />
+
+                        <Label Font="Large" YAlign="Center"
+                                Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+                                TextColor="{Binding Amount, Converter={StaticResource currToColor}}"
+                                Text="{Binding Amount, StringFormat='{0:C}'}" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
