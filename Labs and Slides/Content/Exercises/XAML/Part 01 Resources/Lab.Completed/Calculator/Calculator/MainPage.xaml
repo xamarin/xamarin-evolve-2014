@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Class="Calculator.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    
+    <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+
+       <Grid.RowDefinitions>
+         <RowDefinition Height="2*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+       </Grid.RowDefinitions>
+
+       <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+       </Grid.ColumnDefinitions>
+
+       <Label Font="Bold,48" BackgroundColor="Black" Text="0"
+              TextColor="White" XAlign="End" YAlign="Center"
+              LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+
+       <Button Text="7" Grid.Row="1" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="8" Grid.Row="1" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="9" Grid.Row="1" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+
+      <Button Text="4" Grid.Row="2" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="5" Grid.Row="2" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="6" Grid.Row="2" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+
+      <Button Text="1" Grid.Row="3" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="2" Grid.Row="3" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="3" Grid.Row="3" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+
+       <Button Text="/" Grid.Row="1" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+       <Button Text="X" Grid.Row="2" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+       <Button Text="-" Grid.Row="3" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+       <Button Text="+" Grid.Row="4" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+
+       <Button Text="C" Grid.Row="5" Grid.Column="0"
+                BackgroundColor="#808080" TextColor="White"
+                Font="36" BorderRadius="0" />
+
+       <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+
+    </Grid>
+</ContentPage>

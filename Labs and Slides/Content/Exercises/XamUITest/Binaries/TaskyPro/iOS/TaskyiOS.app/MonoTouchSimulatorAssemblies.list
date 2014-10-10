@@ -1,0 +1,14 @@
+mscorlib.dll
+System.Core.dll
+System.dll
+System.Xml.dll
+Mono.Dynamic.Interpreter.dll
+Tasky.Core.dll
+Mono.Data.Sqlite.dll
+System.Data.dll
+Mono.Data.Tds.dll
+Mono.Security.dll
+System.Transactions.dll
+MonoTouch.Dialog-1.dll
+System.Json.dll
+Calabash.dll

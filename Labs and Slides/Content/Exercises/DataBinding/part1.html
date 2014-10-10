@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>Data Binding in Xamarin.Forms</header>
+    <section id="main">
+
+      <h1>Exercise 1: Using Data Binding in a Xamarin.Forms Application</h1>
+      <h2>Duration</h2>
+      <p>15 minutes</p>
+
+      <h2>Goals</h2>
+      <p>
+      This group exercise will introduce the data binding infrastructure built into Xamarin.Forms by taking an existing application and converting it to use bindings to connect the data defined in code with the UI defined in XAML.
+      </p>
+
+      <h2>Assets</h2>
+      <p>
+      This exercise includes a starter project in the <strong>Part 01 Resources</strong> folder. Make sure you have this folder available before starting the exercise.</p>
+
+      <h2>Challenge</h2>
+      <p>
+      This exercise takes an existing <b>My Contacts</b> application which displays a single contact card of Homer Simpson. The code behind current populates the UI with the data and then watches the various UI events to transfer changes back to the underlying data object.
+      </p>
+      <p>
+      Your job will be to remove the existing manual data transfer code and replace it with data bindings, starting with code and ending with XAML bindings.
+      </p>
+
+      <table>
+        <tr>
+          <td><img src="./res/images/app-ios.png" width="200" /></td>
+          <td><img src="./res/images/app-droid.png" width="200" /></td>
+          <td><img src="./res/images/app-wp8.png" width="200" /></td>
+        </tr>
+      </table>
+
+      <p>Here are the basic steps you will go through:</p>
+      <ol class="indent-large">
+        <li>Open and examine the starter solution.</li>
+        <li>Create a Binding in code behind to tie a property of our <code>Person</code> object to an <code>Entry</code> control in the UI. This will only be done for a single property to demonstrate the creation of bindings in code.</li>
+        <li>Next, replace the binding in code with XAML-based bindings for almost all our UI elements using the <code>Person</code> object as our <code>BindingContext</code>. You will want to data bind the following properties:
+          <ul>
+            <li><code>Name</code></li>
+            <li><code>Email</code></li>
+            <li><code>Dob</code></li>
+            <li><code>IsFavorite</code></li>
+          </ul>
+        You can try to data bind the other two properties (<code>HeadshotUrl</code> and <code>Gender</code>), but you will find that they won't quite work at the moment. In a future exercise, we will fix this problem.
+        </li>
+      </ol>
+
+      <p>
+      If you have worked with data binding on other platforms, then feel free to experiment with this lab - read the above steps and try to create the bindings in code and XAML, remember that you need to set the <code>BindingContext</code> to the source object and then associate each <code>Binding</code> object using the <code>SetBinding</code> method in code, or the <code>{Binding}</code> markup extension in XAML.
+      </p>
+      <p>
+      If data binding is new to you, or you need some guidance, then use the following steps as you go through the lab to get more detailed information on using the binding infrastructure.
+      </p>
+
+      <h1>Steps</h1>
+      <h2>Open the Starter Solution</h2>
+      <ol>
+          <li>Open the <b>MyContacts.sln</b> solution in the <b>Content/Exercises/DataBinding/Part 01 Resources/Lab.Start</b> folder in Visual Studio (Windows) or Xamarin Studio (Mac).</li>
+          <li>Go ahead and build and run the application to make sure it is all working before we begin making changes. As mentioned earlier, it displays a single person in our contact list and allows you to edit the details of the contact. It also has a <strong>Show</strong> button in the Tool bar which displays the details of the underlying <code>Person</code> in an alert box.</li>
+          <li>The solution is fairly straight-forward. There are four projects, we will perform all our work in <strong>MyContacts</strong> Portable Class Library which is the shared code and UI layer. The other three projects are the platform-specific host projects for iOS, Android and Windows Phone.</li>
+          <li>Here are the classes / files we will work with:</li>
+      </ol>
+      <table class="grid indent-large">
+        <tr>
+          <th>File</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><b>App.cs</b></td>
+          <td>Contains the main static entry point for our Xamarin.Forms application which defines the starting page for the application.</td>
+        </tr>
+        <tr>
+          <td><b>ContactDetails.xaml(.cs)</b></td>
+          <td>Defines the UI and logic for our initial page. The <strong>XAML</strong> file defines the UI using markup, the associated code file then provides the behavior for the UI.</td>
+        </tr>
+        <tr>
+          <td><b>SimpsonFactory.cs</b></td>
+          <td>
+            Contains the sample data we will be working with. This has three defined classes in it, one is a factory (<code>SimpsonFactory</code>) that retrieves our second class, the <code>Person</code> objects we are actually going to display. It also contains an enumeration (<code>Gender</code>) to define Male vs. Female characters.
+          </td>
+        </tr>
+      </table>
+
+      <h2>Create a Binding in code</h2>
+      <p>
+        In this first step, we will create a single binding manually - just to see the steps and the required pieces you need. Remember from the lecture that there three required pieces of information: source (<code>BindingContext</code>), property path, and target <code>BindableProperty</code>.
+      </p>
+
+      <ol>
+        <li>Open the <strong>ContactDetails.xaml.cs</strong> code behind file and locate the constructor.</li>
+        <li>Comment out or delete the lines which set the <code>nameEntry</code> control's <code>Text</code> property and wire up to the <code>TextChanged</code> event.</li>
+        <li>Set the <code>BindingContext</code> on the <code>nameEntry</code> control to the active <code>Person</code>.</li>
+        <li>Create a <code>Binding</code> which has the property path - we want to tie to the <code>Name</code> property.</li>
+        <li>Finally, add a binding to the <code>nameEntry</code> control using the <code>SetBinding</code> method - you want to tie the <code>Binding</code> to the <code>Entry.TextProperty</code> property.</li>
+      </ol>
+
+<p><a href="#" onclick="toggleCode(this,'codeBinding');return false;" class="uiitem">Show Code</a><div class="indent-large" id="codeBinding" style="display:none;">
+<pre class="prettyprint">
+public ContactDetails(Person person)
+{
+  this.person = person;
+  InitializeComponent();
+  ...
+
+  // Setup person
+  headshot.Source = ImageSource.FromResource(
+                       "MyContacts.Images." + person.HeadshotUrl);
+  <span class="highlight">//nameEntry.Text = person.Name;</span>
+  emailEntry.Text = person.Email;
+  ...
+
+  // Handle changes
+  <span class="highlight">//nameEntry.TextChanged += (sender, e) => person.Name = nameEntry.Text;</span>
+  ...
+  <span class="highlight">nameEntry.BindingContext = person;
+  Binding nameBinding = new Binding("Name");
+  nameEntry.SetBinding(Entry.TextProperty, nameBinding);</span>
+}
+</pre>
+      </div></p>
+
+      <ol start="6">
+        <li>Run the application and make sure the name field is populated. Try changing it's value and then click the <strong>Show</strong> button to see if it changed the underlying object as you can see here:
+            <img src="./res/images/show-person.png" />
+        </li>
+      </ol>
+
+      <h2>Create XAML-based bindings for our controls</h2>
+      <p>You can create bindings in code, just as you did a moment ago, but more often than not, you will want to place the bindings in XAML. This reduces our code behind, decouples our UI from the code behind and makes the code behind primarily oriented towards behavior instead of behavior + display logic.</p>
+      <ol>
+        <li>First, we want to set the <code>BindingContext</code>. We could set it on every single element, but remember from the lecture that <code>BindingContext</code> is inherited when it is set on a parent element. So, assign the <code>BindingContext</code> on the page itself - make it the <code>Person</code> object we want to get all our data from.</li>
+        <li>The controls we want to data bind are:
+          <ul class="indent-none">
+            <li><strong>nameEntry</strong></li>
+            <li><strong>emailEntry</strong></li>
+            <li><strong>birthday</strong></li>
+            <li><strong>favoriteSwitch</strong></li>
+          </ul>
+          We want to leave the <strong>genderPicker</strong> and <strong>headshot</strong> controls alone for now - these will require a little more work to data bind.</li>
+        <li>For each of the above controls, we want to:
+          <ul class="indent-none">
+            <li>Comment out or remove the existing code-behind that populates the controls with data.</li>
+            <li>Go ahead and comment out or remove the existing code-based binding you added in the last part.</li>
+            <li>Comment out or remove the event handling - just as we did with the <strong>nameEntry</strong> in the first part.</li>
+          </ul>
+        </li>
+      </ol>
+<p><a href="#" onclick="toggleCode(this,'xamBinding1');return false;" class="uiitem">Show Code</a><div class="indent-large" id="xamBinding1" style="display:none;">
+<pre class="prettyprint">
+public ContactDetails(Person person)
+{
+    <span class="highlight">BindingContext = person;</span>
+
+    ...
+
+    // Setup person
+    headshot.Source = ImageSource.FromResource("MyContacts.Images." + person.HeadshotUrl);
+    <span class="highlight">//nameEntry.Text = person.Name;
+    //emailEntry.Text = person.Email;
+    //birthday.Date = person.Dob;
+    //favoriteSwitch.IsToggled = person.IsFavorite;</span>
+    genderPicker.SelectedIndex = (person.Gender == Gender.Male) ? 0 : 1;
+
+    <span class="highlight">//nameEntry.BindingContext = person;
+    //Binding nameBinding = new Binding("Name");
+    //nameEntry.SetBinding(Entry.TextProperty, nameBinding);</span>
+
+    // Handle changes
+    <span class="highlight">//nameEntry.TextChanged += (sender, e) => person.Name = nameEntry.Text;
+    //emailEntry.TextChanged += (sender, e) => person.Email = emailEntry.Text;
+    //birthday.DateSelected += (sender, e) => person.Dob = birthday.Date;
+    //favoriteSwitch.Toggled += (sender, e) => person.IsFavorite = favoriteSwitch.IsToggled;</span>
+  ...
+}
+
+</pre>
+      </div></p>
+
+      <ol start="4">
+        <li>Next, open the <strong>ContactDetails.xaml</strong> markup file and add in <code>{Binding PROPERTY_NAME}</code> tags on each of the above controls to tie the appropriate property to each target. You will want to look at the current code you just commented out to determine the proper source property and target property. For example, the <strong>nameEntry</strong> would look like this:
+<pre class="prettyprint codeblock">
+&lt;Entry x:Name="nameEntry" <span class="highlight">Text="{Binding Name}"</span> />
+</pre>
+        This would tie the <code>Text</code> property of the <code>Entry</code> control to the <code>Name</code> property of the <code>BindingContext</code>.</li>
+      </ol>
+<p><a href="#" onclick="toggleCode(this,'xamBinding2');return false;" class="uiitem">Show Code</a><div class="indent-large" id="xamBinding2" style="display:none;">
+<pre class="prettyprint">
+&lt;Image x:Name="headshot" HeightRequest="200" Aspect="AspectFit" />
+
+&lt;Label Text="Name" Font="Bold" />
+&lt;Entry x:Name="nameEntry" <span class="highlight">Text="{Binding Name}"</span> />
+
+&lt;Label Text="Email" Font="Bold" />
+&lt;Entry x:Name="emailEntry" <span class="highlight">Text="{Binding Email}"</span> />
+
+&lt;Label Text="Gender" Font="Bold" />
+&lt;Picker x:Name="genderPicker">
+  &lt;Picker.Items>
+    &lt;x:String>Male&lt;/x:String>
+    &lt;x:String>Female&lt;/x:String>
+  &lt;/Picker.Items>
+&lt;/Picker>
+
+&lt;Label Text="Birthday" Font="Bold" />
+&lt;DatePicker x:Name="birthday" <span class="highlight">Date="{Binding Dob}"</span> />
+
+&lt;Label Text="Favorite" Font="Bold" />
+&lt;Switch x:Name="favoriteSwitch" <span class="highlight">IsToggled="{Binding IsFavorite}"</span> />
+</pre>
+      </div></p>
+
+    <ol start="5">
+      <li>Run the application and make sure each of the fields displays data. Try changing a control's value and click the <strong>Show</strong> button to see if it changed the underlying object. <em>Hint: it should!</em></li>
+    </ol>
+
+    <h1>Summary</h1>
+    <p>
+    In this exercise, you have taken an existing Xamarin.Forms application and modified it to use Data Binding to populate the UI.
+    </p>
+    <p>
+    There is a completed version of the lab exercise in the resources folder.</p>
+
+    <div class="align-right">
+        <a href="javascript:history.back()">Back</a>
+    </div>
+
+  </section>
+  <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

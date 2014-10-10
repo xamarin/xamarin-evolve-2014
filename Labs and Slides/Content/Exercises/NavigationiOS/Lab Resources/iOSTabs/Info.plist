@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.university.mobilenav.ios.tabs</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>MinimumOSVersion</key>
+	<string>7.0</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>icon-57</string>
+		<string>icon-114</string>
+		<string>icon-72</string>
+		<string>icon-29</string>
+		<string>icon-58</string>
+		<string>icon-50</string>
+	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Tabs</string>
+</dict>
+</plist>

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyContacts", "MyContacts\MyContacts\MyContacts.csproj", "{C1D40D5B-25BA-4C11-994D-43DD96587AF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyContacts.iOS", "MyContacts\MyContacts.iOS\MyContacts.iOS.csproj", "{A4871739-660F-4068-9088-55399F89DC5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyContacts.Android", "MyContacts\MyContacts.Android\MyContacts.Android.csproj", "{625E96F0-C674-4218-98F0-2EB80C4D4DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyContacts.WinPhone", "MyContacts\MyContacts.WinPhone\MyContacts.WinPhone.csproj", "{21C93CF6-2E74-4CEE-B650-D65007C17DBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1D40D5B-25BA-4C11-994D-43DD96587AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D40D5B-25BA-4C11-994D-43DD96587AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D40D5B-25BA-4C11-994D-43DD96587AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D40D5B-25BA-4C11-994D-43DD96587AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4871739-660F-4068-9088-55399F89DC5D}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{A4871739-660F-4068-9088-55399F89DC5D}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{A4871739-660F-4068-9088-55399F89DC5D}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{A4871739-660F-4068-9088-55399F89DC5D}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{625E96F0-C674-4218-98F0-2EB80C4D4DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625E96F0-C674-4218-98F0-2EB80C4D4DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625E96F0-C674-4218-98F0-2EB80C4D4DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625E96F0-C674-4218-98F0-2EB80C4D4DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C93CF6-2E74-4CEE-B650-D65007C17DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C93CF6-2E74-4CEE-B650-D65007C17DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C93CF6-2E74-4CEE-B650-D65007C17DBD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{21C93CF6-2E74-4CEE-B650-D65007C17DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C93CF6-2E74-4CEE-B650-D65007C17DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C93CF6-2E74-4CEE-B650-D65007C17DBD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MyContacts\MyContacts.iOS\MyContacts.iOS.csproj
+	EndGlobalSection
+EndGlobal

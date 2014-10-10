@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>Introduction to Xamarin.Forms</header>
+
+    <section id="main">
+
+        <h1>Creating Xamarin.Forms Phoneword</h1>
+        <h2>Duration</h2>
+        <p>20 minutes</p>
+
+        <h2 id="goals">Goals</h2>
+        <p>The goal will be to create a new Xamarin.Forms application which displays a UI to translate and dial a phone number. The UI will consist of a:
+            <strong>Label</strong>,
+            <strong>Text Field</strong> and two
+            <strong>Buttons</strong>.
+        </p>
+
+        <table class="indent-small">
+            <tr>
+                <td>
+                    <img src="./res/images/Android-Part2-Complete.png" />
+                </td>
+                <td>
+                    <img src="./res/images/Win-Part2-Complete.png" />
+                </td>
+                <td>
+                    <img src="./res/images/iOS-Part2-Complete.png" />
+                </td>
+            </tr>
+        </table>
+
+        <p>Our steps for this exercise be broken into two separate sections - first, creating the UI by:
+            <ol class="indent-medium">
+                <li>Create the UI using a <code>StackLayout</code>, <code>Label</code>, <code>Entry</code> and two <code>Button</code> elements.</li>
+            </ol>
+        </p>
+
+        <p>Next, we will add some behavior that will:
+            <ol class="indent-medium" start="2">
+                <li>Respond to a <code>Click</code> event on the
+                    <strong>Translate Button</strong>.</li>
+                <li>Retrieve the text typed into the
+                    <strong>Entry</strong>.</li>
+                <li>Translate the alphanumeric text into a traditional phone number, where ABC &#10145; 2, DEF &#10145; 3, etc.</li>
+                <li>Update the text of the <strong>Call Button</strong> to include the translated numeric phone number; we will also update the enabled state so the user can tap the button, although we won't add any behavior to actually dial the phone here.</li>
+            </ol>
+
+        </p>
+
+        <h2>Assets</h2>
+        <p>
+        There is a C# source file named <strong>PhoneTranslator.cs</strong> which will need to be added to your project. It is located in the <strong>Content/Exercises/Intro.Forms/Part 01 Resources</strong> folder of the labs directory.</p>
+
+        <h2>Exercise Challenge</h2>
+        <p>
+            Using the worksheet to give you the information you need, try to accomplish the <a href="#goals">(5) steps outlined above</a> for this exercise. If you need some additional help, there are <a href="#steps">step-by-step instructions below</a>. Here are some notes to help you get started:
+        </p>
+        <ul class="indent-medium">
+            <li>The translation of the phone number will be done by an existing static method called
+                <code>PhonewordTranslator.ToNumber</code> which looks like.</li>
+            <div class="codeblock">
+                <code>public static string ToNumber(string alphanumericNumber);</code>
+            </div>
+            It is defined in a source file contained in the
+            <strong>Part 01 Resources</strong> folder which should have been included as part of the lab exercise. The source file is named
+            <strong>PhoneTranslator.cs</strong>, make sure you can find it and add it to your project.
+            <li>Feel free to experiment and ask questions during the lab - there is a completed version of the lab in the resources folder if you don't have enough time to complete it as written here.</li>
+        </ul>
+
+        <h1 id="steps">Steps</h1>
+
+        <h2>Create the initial project</h2>
+        <p>The first step is to create a new Xamarin.Forms project. You can use either Visual Studio (shown here) or Xamarin Studio.</p>
+
+        <ol class="indent-medium">
+            <li>Create a new solution and select the &quot;Blank App (Xamarin.Forms Portable)&quot; project type from the <strong>Mobile Apps</strong> category under <strong>(Visual) C#</strong>.</li>
+            <div class="hintblock">
+            You can also choose &quot;Blank App (Xamarin.Forms Shared)&quot; as your project type - generally everything here will work, although the platform-specific code could be done differently in that project style.
+            </div>
+            <li>Name the project &quot;Phoneword&quot; and place it into a known location.</li>
+
+            <img src="./res/images/VS-NewProject-XamForms.png" />
+
+        </ol>
+
+        <h2>Add <code>PhoneTranslator</code> to our project</h2>
+        <p>We need to add the code to translate the alphanumeric phone number into a numeric phone number. The code has already been written for you and is in the <strong>Part 01 Resources/PhoneTranslator.cs</strong> source file.</p>
+        <ol class="indent-medium">
+            <li>Right-click the shared project node (this should be named <strong>Phoneword</strong> and be in the root of the solution) and select <strong>Add > Add Files...</strong> in Xamarin Studio, or <strong>Add > Add Existing Item...</strong> in Visual Studio.</li>
+
+            <div class="hintblock">
+            <strong>Note:</strong> this is a sharable C# file - make sure you place it into the shared project (PCL or shared library) which is used with all three applications.
+            </div>
+            <li>Navigate to the <strong>Part 01 Resources</strong> folder and select the <strong>PhoneTranslator.cs</strong> file to add it to the project.</li>
+            <li>In Xamarin Studio, use the default <strong>Copy</strong> choice.</li>
+            <li>Open the file and examine the contents - it has a single public static method, which you will be using to translate the number from alphanumeric text into a straight numeric number.</li>
+        </ol>
+
+        <h2>Restructure the Boilerplate code</h2>
+        <p>
+        As a first step, let's make the code a little more maintainable by restructuring the shared code a little.
+        </p>
+        <ol class="indent-medium">
+            <li>Open the <strong>App.cs</strong> file which was created as part of the template.</li>
+            <li>Take the code which creates the page and move it to a new class that derives from <code>ContentPage</code> - name the class <strong>MainPage</strong>. Place the creation code into the constructor.</li>
+            <li>Change the <code>GetMainPage</code> code to now instantiate your new <code>MainPage</code> object and return it.</li>
+            <li>Run the application and make sure it still builds and executes. You can run the application on any of the three platforms, for time just pick the easiest platform for your configuration.</li>
+        </ol>
+
+<p><a href="#" onclick="toggleCode(this,'reorgCode');return false;" class="uiitem">Show Code</a>
+            <div id="reorgCode" style="display:none;">
+<pre class="prettyprint">
+// App.cs
+public class App
+{
+   public static Page GetMainPage()
+   {
+      return new MainPage();
+   }
+}
+
+// MainPage.cs
+public class MainPage : ContentPage
+{
+   public MainPage()
+   {
+      Content = new Label
+      {
+         Text = "Hello, Forms !",
+         VerticalOptions = LayoutOptions.CenterAndExpand,
+         HorizontalOptions = LayoutOptions.CenterAndExpand,
+      };
+    }
+}
+</pre>
+        </div></p>
+
+        <h2>Create the UI for Phoneword</h2>
+        <p>
+        Next, we need to describe the user interface for Phoneword. Remember, we are using controls defined in Xamarin.Forms which will then be rendered with native implementations in each project. </p>
+        <p>The controls you need to create are:</p>
+        <ul class="indent-medium">
+            <li><code>Label</code> which has the text &quot;Enter a Phoneword:&quot;.</li>
+            <li><code>Entry</code> which is used to collect the input from the user. It should be initialized with the text &quot;1-855-XAMARIN&quot;.</li>
+            <li><code>Button</code> with the title &quot;Translate&quot; which will activate the number translation.</li>
+            <li><code>Button</code> with the title &quot;Call&quot;, which will eventually call the number. This should be initially disabled.</li>
+            <li>You should capture off the <code>Entry</code> and the two <code>Button</code> controls in fields so you can interact with them later.</li>
+        </ul>
+        <p>All of the above needs to be organized in the UI top-to-bottom, so you can use a <code>StackLayout</code> in the <em>vertical orientation</em>. Here are the layout rules we'd like to have:</p>
+        <ol class="indent-medium">
+            <li>The content should be set to fill/expand to the screen size.</li>
+            <li>Children should have a 15 device pixel spacing between them.</li>
+            <li>The entire page should have some padding - in particular, it should have 20 device pixels oun all edges, except iOS where it should have add another 20 device pixels to the top (for a total of 40). Check out <a href="./worksheet.html#DeviceOnPlatform">this hint in the worksheet</a> for how to do this.</li>
+            <li>Run the application and verify the UI has the proper layout and controls are all visible. On iOS, it should look something like:</li>
+            <img src="./res/images/iOS-Part2-Complete.png" />
+        </ol>
+
+        <p><a href="#" onclick="toggleCode(this,'createUI');return false;" class="uiitem">Show Code</a>
+            <div id="createUI" style="display:none;">
+<pre class="prettyprint">
+public class MainPage : ContentPage
+{
+   Entry phoneNumberText;
+   Button translateButton;
+   Button callButton;
+
+   public MainPage()
+   {
+       this.Padding = new Thickness(20, Device.OnPlatform(40, 20, 20), 20, 20);
+
+        StackLayout panel = new StackLayout {
+            VerticalOptions = LayoutOptions.FillAndExpand,
+            HorizontalOptions = LayoutOptions.FillAndExpand,
+            Orientation = StackOrientation.Vertical,
+            Spacing = 15,
+        };
+
+        panel.Children.Add(new Label {
+            Text = "Enter a Phoneword:",
+        });
+
+        panel.Children.Add(phoneNumberText = new Entry {
+            Text = "1-855-XAMARIN",
+        });
+
+        panel.Children.Add(translateButton = new Button {
+            Text = "Translate"
+        });
+
+        panel.Children.Add(callButton = new Button {
+            Text = "Call",
+            IsEnabled = false,
+        });
+
+        this.Content = panel;
+    }
+}
+</pre>
+            </div>
+        </p>
+
+        <h2>Implement the Logic for the Translate Button</h2>
+
+        <p>We need to handle the <code>Click</code> event for our
+            <code>TranslateButton</code> - this will be raised when the user taps on the translate button in the UI and is the abstracted event for all the platform variations. The handler should:</p>
+
+        <ol class="indent-medium">
+            <li>Get the phone number from the <code>Entry</code> control.
+                <ul class="indent-none">
+                    <li>Hint: use the <code>Text</code> property.</li>
+                </ul>
+            </li>
+            <li>Translate it using the <code>PhonewordTranslator.ToNumber</code> method.
+                <ul class="indent-none">
+                    <li>You will need to add a namespace to access it.</li>
+                    <li>This method returns <code>null</code> if the number could not be translated.</li>
+                </ul>
+            </li>
+            <li>Change the text of the <strong>Call Button</strong> to include the phone number when it is successfully translated.
+                <ul class="indent-none">
+                    <li>Hint: use the <code>Text</code> property.</li>
+                </ul>
+            </li>
+            <li>Enable the <strong>Call Button</strong> so it can be tapped to dial the phone.
+                <ul class="indent-none">
+                    <li>Hint: use the <code>IsEnabled</code> property.</li>
+                     <li>Make sure to reset the title of the <strong>CallButton</strong> if the number translation fails.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><a href="#" onclick="toggleCode(this,'translateButtonCode');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="translateButtonCode" style="display:none;">
+<pre class="prettyprint">
+public MainPage()
+{
+    ...
+    <span class="highlight">translateButton.Clicked += OnTranslate;</span>
+
+    this.Content = panel;
+}
+<span class="highlight">
+void OnTranslate(object sender, System.EventArgs e)
+{
+    translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
+    if (!string.IsNullOrEmpty(translatedNumber)) {
+        callButton.IsEnabled = true;
+        callButton.Text = "Call " + translatedNumber;
+    } else {
+        callButton.IsEnabled = false;
+        callButton.Text = "Call";
+    }
+}</span>
+</pre>
+            </div>
+        </p>
+
+        <h2>Test the Application</h2>
+
+        <ol>
+            <li>The <strong>Translate Button</strong> is now wired with behavior, so go ahead and test it. Run the application in either the simulator or on a physical device.</li>
+            <li>The application should build and if everything has gone well our app will display and show a disabled Call Button.</li>
+            <li>Touch the Translate button in our app and verify the Call button title changes to &quot;Call 1-855-9262746&quot;, and the button becomes enabled.</li>
+            <li>Try changing the phone number in the Text Field. Notice that iOS pops up an on-screen keyboard automatically. It should dissmiss either when you tap the Translate button, or when you press the <strong>Return</strong> key on the iOS keyboard. This behavior is built into Xamarin.Forms and makes the keyboard experience consistent across the platforms.</li>
+            <li>If you have time, try running it on the other platforms to see the consistent UI and experience you have created.</li>
+        </ol>
+
+
+
+        <h1>Summary</h1>
+        <p>
+        In this lab, we have built our first Xamarin.Forms application with real logic. In the next lab, we are going to extend this application by adding some device-specific behavior to show an alert box and dial the phone.</p>
+
+        <div class="align-right">
+            <a href="javascript:history.back()">Back</a>
+        </div>
+    </section>
+
+    <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

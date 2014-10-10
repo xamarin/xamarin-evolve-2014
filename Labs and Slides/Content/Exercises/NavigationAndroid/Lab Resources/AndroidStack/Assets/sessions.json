@@ -1,0 +1,526 @@
+[
+   {
+      "id":0,
+      "title":"Simple, Fast, Elastic NoSQL with Couchbase Server and Mono",
+      "abstract":"Couchbase Server is a simple, fast, and elastic documented-oriented database. It is simple in its document-oriented approach to data modeling, where domain objects may be naturally mapped to their persistence layer. It is simple to monitor and manage in production, elastically allowing administrators to add and remove nodes to a cluster at any time, without downtime. Couchbase Server is fast thanks to its actively managed cache, compatible with (and built upon) memcached. Indexing, analytics and other advanced ways of managing data in a Couchbase cluster are easily available through the definition of incremental Map/Reduce views.",
+      "speakers":[
+         {
+            "id":9,
+            "name":"John Zablocki",
+            "twitterHandle":"codevoyeur",
+            "bio":"John Zablocki is a Developer Advocate at Couchbase, where he is responsible for developing the Couchbase Client Library for .NET. He is the organizer of Beantown ALT.NET , a former adjunct at Fairfield University, and an author for O’Reilly. John holds an M.S. in Computer Science from Rensselaer Hartford. He has worked at startups throughout his career and is interested in the intersection of .NET and open source. Online, John can be found at http://johnzablocki.com. Offline, he can be found too infrequently around Boston, with his dog, daughter, and his Fender Telecaster.",
+            "headshotUrl":"/images/speakers/john_zablocki.jpg"
+         }
+      ],
+      "begins":"2012-10-17T10:15:00.0000000-04:00",
+      "ends":"2012-10-17T11:15:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":1,
+      "title":"Cross Platform Mobile NoSQL with TouchDB-Mono",
+      "abstract":"TouchDB is an Apache CouchDB-compatible database engine, which is suitable for use in mobile or desktop apps. TouchDB supports replication with CouchDB and has a programming model similar to CouchDB (views, REST API). Currently TouchDB is implemented as a native application for both the iOS and Android platforms, meaning that both iOS and Java sources are maintained.\n\nThe TouchDB-Mono project is an attempt to bring the TouchDB project to C#, where Mono (along with MonoTouch and Mono for Android) will allow for a single, cross-platform TouchDB codebase. The new codebase should ultimately provide TouchDB support for iOS, Android and Windows Phone 8 devices.\n\nTouchDB-Mono is still in very early, pre-alpha stages. This talk will introduce the existing TouchDB projects and will explore the efforts required to port a Java application to C# using Sharpen. The current state of the TouchDB-Mono project will be covered, with a detailed discussion of the challenges of a reasonably large-scale cross platform development effort.",
+      "speakers":[
+         {
+            "id":9,
+            "name":"John Zablocki",
+            "twitterHandle":"codevoyeur",
+            "bio":"John Zablocki is a Developer Advocate at Couchbase, where he is responsible for developing the Couchbase Client Library for .NET. He is the organizer of Beantown ALT.NET , a former adjunct at Fairfield University, and an author for O’Reilly. John holds an M.S. in Computer Science from Rensselaer Hartford. He has worked at startups throughout his career and is interested in the intersection of .NET and open source. Online, John can be found at http://johnzablocki.com. Offline, he can be found too infrequently around Boston, with his dog, daughter, and his Fender Telecaster.",
+            "headshotUrl":"/images/speakers/john_zablocki.jpg"
+         }
+      ],
+      "begins":"2012-10-18T09:00:00.0000000-04:00",
+      "ends":"2012-10-18T10:00:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":2,
+      "title":"What is new with Mono",
+      "abstract":"Top Secret",
+      "speakers":[
+         {
+            "id":10,
+            "name":"Miguel de Icaza",
+            "twitterHandle":"migueldeicaza",
+            "bio":"Miguel has directed the Mono project since its creation in 2001 and oversaw the launches of Mono's desktop, server and mobile offerings at Novell. Before Mono he started writing free software in 1992 and co-founded the GNOME project in 1997. In 1999 Miguel co-founded Ximian with Nat. He also worked on the Midnight Commander file manager, Gnumeric, and the Linux kernel. He serves as an advisor at Stack Exchange. He has received the Free Software Foundation 1999 Free Software Award, the MIT Technology Review Innovator of the Year Award in 1999, and was named one of Time Magazine's 100 innovators for the new century in September 2000.",
+            "headshotUrl":"/images/speakers/miguel.jpg"
+         }
+      ],
+      "begins":"2012-10-17T09:00:00.0000000-04:00",
+      "ends":"2012-10-17T10:00:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":3,
+      "title":"Vernacular: modern localization for iOS, Android, Windows Phone, and more",
+      "abstract":"Vernacular is a modern localization tool and library for developers. While it is primarily focused on providing a unified localization system for MonoTouch, Mono for Android, and Windows Phone, Vernacular can provide localization support for any platform and language.\n\nVernacular brings full support for both pluralization and gendered strings - something impossible through each platform's \"native\" localization support. Vernacular effectively brings the functionality of gettext in a common and easy to use way to Android, iOS, Windows Phone, and more, and provides easy integration with the tools translators commonly use today.\n\nLearn how simple it is to solve localization, without making compromises that marginalize end users, across the entire Mono/.NET-based mobile ecosystem with unified process, tooling, and application support code. Even if you're not focused on the mobile space, Vernacular can still be very useful in your applications.",
+      "speakers":[
+         {
+            "id":11,
+            "name":"Aaron Bockover",
+            "twitterHandle":"abock",
+            "bio":"Aaron works at Rdio on the common C# core that powers their Android, iOS, and Windows Phone applications. In March he started the Vernacular project with the goal of easing localization pain for mobile application developers while at the same time enhancing localization support for users. Prior to Rdio, Aaron worked at Novell creating and maintaining the popular Banshee Media Player desktop application and working extensively in openSUSE, Moblin, and MeeGo.\n\nAaron has been a developer, user, and advocate of Mono since 2002, but perhaps Aaron's most important contribution to the universe has been CatOverflow.com. Aaron is a world renowned pork, beer, and whisky connoisseur.",
+            "headshotUrl":"/images/speakers/aaron.jpg"
+         }
+      ],
+      "begins":"2012-10-17T15:00:00.0000000-04:00",
+      "ends":"2012-10-17T16:00:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":4,
+      "title":"Alternatives to Entity Framework: Build a Massively Dapper but Simple Data layer",
+      "abstract":"Tired of using Entity Framework?  Is your data access layer slow?  Dread opening that EDMX file?  Then this talk is for you!  Together we'll explore some alternative \"Micro ORM's\" that bring you closer to the metal, improving performance and returning control of your data access layer to you!",
+      "speakers":[
+         {
+            "id":12,
+            "name":"John Bubriski",
+            "twitterHandle":"johnbubriski",
+            "bio":"John has worked tirelessly with C# and .NET, but likes working outside the (Microsoft) box too.  John enjoys using non-Microsoft loves Visual Studio and the CLR, but enjoys using other libraries and languages.  Outside work John and his beautiful wife raise a 2 year old son and a 2 month old daughter.  In his free time, John works with a friend building indie games.",
+            "headshotUrl":"/images/speakers/john_bubriski.jpg"
+         },
+         {
+            "id":27,
+            "name":"Jared Barboza",
+            "twitterHandle":"Codeimpossible",
+            "bio":"Jared currently works for Blackduck Software as a Ruby on Rails developer where he spends his days working on the website Ohloh.net and interacting with the open-source community. Jareds nights are spent enjoying time with his wife, hacking on open-source projects, playing the guitar or trying to get the indie game start-up he co-founded with John Bubriski off the ground.",
+            "headshotUrl":"/images/speakers/jared.jpg"
+         }
+      ],
+      "begins":"2012-10-18T11:30:00.0000000-04:00",
+      "ends":"2012-10-18T12:30:00.0000000-04:00",
+      "location":"Adams"
+   },
+   {
+      "id":5,
+      "title":"A Call To Arms - The Future of Async IO in .NET Open Source",
+      "abstract":"With the upcoming release of WinRT / Metro, Microsoft has chosen to put the .NET Open Source community in a frustrating position, by making it very difficult to port existing code to the WinRT profile of the framework. In particular, they have deprecated all of the existing synchronous File IO and Network APIs. Gone. Nada. These two concerns aren't easy to abstract away either - the semantics of synchronous code are pervasive in most code bases.\n\nHowever, this is a good thing. Why? I propose that we should Embrace and Extend the Windows IO and Network APIs - implement versions that run on the Desktop CLR, MonoTouch, and MonoDroid, then start using them in libraries as the *sole* means of interacting with IO. I'll be discussing the details of this idea in my talk as well as why this will be an overall positive for the Open Source world, if we capitalize on this opportunity.",
+      "speakers":[
+         {
+            "id":13,
+            "name":"Paul Betts",
+            "twitterHandle":"xpaulbettsx",
+            "bio":"I'm a Windows ⁄ .NET Hacker for GitHub who graduated from The Ohio State University. In my spare time, I hack on some open–source software, play guitar and bass, and in general am within ε of really awesome.",
+            "headshotUrl":"/images/speakers/paul.jpg"
+         }
+      ],
+      "begins":"2012-10-18T13:45:00.0000000-04:00",
+      "ends":"2012-10-18T14:45:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":6,
+      "title":"OWIN - Run your C# for the web anywhere",
+      "abstract":"Open Web Interfaces for .NET - how lightweight can C# web development become? Let's explore how this open standard enables you to run any combination of compatible web frameworks side-by-side on a variety of hosting options.",
+      "speakers":[
+         {
+            "id":14,
+            "name":"Louis DeJardin",
+            "twitterHandle":"@loudej",
+            "bio":"Louis DeJardin works at Microsoft on the web team and is an active member of the OWIN specification working group. Prior to that he worked at Dow Jones creating real-time web-based systems and is the author of the Spark view engine.",
+            "headshotUrl":"/images/speakers/louis.jpg"
+         }
+      ],
+      "begins":"2012-10-18T15:00:00.0000000-04:00",
+      "ends":"2012-10-18T16:00:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":7,
+      "title":"Using View Abstraction and Mixed Views with MonoCross",
+      "abstract":"Most enterprise mobile applications focus on delivery and consumption of large amounts of business information, as well as executing transactions using that information.  Searchable lists, menus, blocks of text and forms with data specific types are all prevalent in these applications, but require different implementations on specific platforms that make cross-platform usage difficult.  By implementing and using a user interface abstraction that represents these concepts in your MonoCross code you can achieve the best of both worlds: shared, cross-platform, information-driven views based on the abstract principles above, mixed with as many rich, interactive, platform-specific views as your application requires.",
+      "speakers":[
+         {
+            "id":15,
+            "name":"Scott Olson",
+            "twitterHandle":"vagabondrev",
+            "bio":"Scott Olson has spent the past 19 years building software and advising our clients on the potential of software and mobility. He is the author of Professional Cross-Platform Mobile Development in C#, (Wrox 2012), a contributing writer for iPhone Life magazine, and a thought leader in enterprise mobility. Throughout his career Scott has worked with many of the Fortune 500 companies including Best Buy, Target Corporation, Medtronic, and Prudential Financial. He believes that mobility has the power to transform the enterprise, and will change the way companies write and use software.",
+            "headshotUrl":"/images/speakers/scott.jpg"
+         }
+      ],
+      "begins":"2012-10-18T10:15:00.0000000-04:00",
+      "ends":"2012-10-18T11:15:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":8,
+      "title":"Facelift your JavaScript with TypeScript. The Big Bang theory.",
+      "abstract":"Although JavaScript is the most deployed language in the world, it has it's own quirks. While some of us got used to them, the other are still looking to create a better development experience. Now the wait is over! TypeScript is an open-source programming language that makes it easier to write cross-platform, application scale, JavaScript that runs in any browser or in any host, including NodeJS.  Join us to play with TypeScript, which is a typed superset of JavaScript. You'll be amazed how well it compiles into idiomatic (normal) JavaScript. We're going to see how dramatically it can improve your productivity by enabling rich tooling experiences, all while maintaining your existing code and continuing to use the same JavaScript libraries you already love.",
+      "speakers":[
+         {
+            "id":16,
+            "name":"Igor Moochnick",
+            "twitterHandle":"igor_moochnick",
+            "bio":"Igor has been building enterprise cross-platform and cross-technology distributed systems for more than 20 years. He is passionate about all the technologies and methodologies that can enable applications to scale seamlessly, to process large amounts of data, and to serve more users. With cloud technologies becoming widely available and advances in the virtualization space, he is using his expertise to help BlueMetal Architects’ clients modernize their applications and infrastructure, and scale them in private and public clouds. In his spare time he geeks out on Big Data and Robotics, and is a frequent speaker and supporter at multiple code camps and events in the New England user group community.",
+            "headshotUrl":"/images/speakers/igor.jpg"
+         }
+      ],
+      "begins":"2012-10-19T10:15:00.0000000-04:00",
+      "ends":"2012-10-19T11:15:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":9,
+      "title":"Xwt, a cross-desktop UI library",
+      "abstract":"At Xamarin we have historically been a GTK+ shop but with our new multi-platform focus, we have recently developed Xwt, a cross-desktop UI library which allows us to write our UI code once and run it natively on GTK+, Cocoa and WPF. Come to learn how the API works, how it's built and, why not, help us improve it.",
+      "speakers":[
+         {
+            "id":17,
+            "name":"Jérémie Laval",
+            "twitterHandle":"jeremie_laval",
+            "bio":"French guy, Xamarin hacker, I have been in the Mono scene for a long time, working on the various open-source part of the project. These days, I'm working on improving our developer experience for MonoTouch and Mono for Android.",
+            "headshotUrl":"/images/speakers/jeremie.jpg"
+         }
+      ],
+      "begins":"2012-10-18T11:30:00.0000000-04:00",
+      "ends":"2012-10-18T12:30:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":10,
+      "title":"Graffiti: A different approach to cross-platform game development",
+      "abstract":"Game engines today are mostly about providing the maximum graphics performance and customizability, which is in trend with the hardware. Unfortunately, they are also API-like in nature, requiring initialization/calls in a particular sequence and in having to manage their state externally. Creating complex effects also often involves writing/generating a combination of shaders, code and data files \u2013 which can often get out of sync or be hard to maintain.\n\nGraffiti bucks the trend by providing a simple set of declarative-syntax based open source libraries that are set-up-and-go oriented. Almost all of the data Graffiti needs is designed to be written directly as readable, markup-like C# code (or serialized/deserialized), which makes it robust and type-safe. Core tenets of Graffiti include Quake 3 style shaders, simple key frame based animation and batched rendering. Each module of Graffiti is focused on a handful of tasks, which other pieces leverage.\n\nIt is also written on top of XNA/MonoGame and its most compatible profile (Reach), which makes it exceedingly cross platform. The goal is to create a truly cross-platform set of game libraries which can help create professional-looking games with far less effort and a different approach, one that is better suited to the increasingly expressive languages available for the .NET/Mono frameworks today.",
+      "speakers":[
+         {
+            "id":18,
+            "name":"Ananth Balasubramaniam",
+            "twitterHandle":"ananthonline",
+            "bio":"I am a graphics/language/parallel-computing geek who has written more rendering engines than I can keep track of (although not always for games). I love C# and the .NET/Mono frameworks deeply and have done things with them that are completely off the beaten track. I have recently begun taking an interest in cross-platform game (engine) development including mobile platforms, especially using Mono because of the broad reach and ease-of-use that runtime enables.",
+            "headshotUrl":"/images/speakers/ananth.jpg"
+         }
+      ],
+      "begins":"2012-10-17T15:00:00.0000000-04:00",
+      "ends":"2012-10-17T16:00:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":11,
+      "title":"Windows 8, XNA and MonoGame – How to get your game into the Windows 8 Store",
+      "abstract":"Windows 8 is Windows reimagined and reinvented from a solid core of Windows 7 speed and reliability with an all-new Start Screen and a new developer API called WinRT. With more than 630 million Windows 7 licenses sold to date, across 200+ countries and regions around the world, Windows has an unrivaled global reach. Combined with the flexibility of monetization options that the Windows 8 Store provides, Windows 8 represents the single biggest developer opportunity for any platform.\n\nCasual game developers have been using XNA since 2004 to easily create games for Windows, XBox and most recently Windows Phone. XNA is a .NET framework for game development providing a content pipeline and game asset load functionality, animation, math, sound and user input tracking via gamepad, mouse, keyboard and touch with game logic organized in a straightforward game loop architecture. MonoGame is an Open Source implementation of the Microsoft XNA 4 Framework that now supports Windows 8.\n\nThis session will tell you how to get started using MonoGame for Windows 8 Store App development and provide details on the Windows 8 features you must implement in order to get your game the Windows 8 store.",
+      "speakers":[
+         {
+            "id":19,
+            "name":"Bob Familiar",
+            "twitterHandle":"bobfamiliar",
+            "bio":"Bob Familiar is Director of Technical Evangelism for Microsoft DPE East Region. The Technical Evangelism team works with students and professional developers to help them learn, adopt and use the Microsoft developer platform to design, build and deploy games and apps for the phone, cloud and Windows.",
+            "headshotUrl":"/images/speakers/bob.jpg"
+         }
+      ],
+      "begins":"2012-10-19T09:00:00.0000000-04:00",
+      "ends":"2012-10-19T10:00:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":12,
+      "title":"Effective MonoDevelop: Tips, Tricks and Workflows",
+      "abstract":"This talk has something to help every user get more out of MonoDevelop by discovering advanced functionality and customizing the development experience. It starts with an overview of the MonoDevelop workspace and how it can be customized, explores many hidden and not-so-well-known features all over the IDE that make coding, debugging and navigation quicker and easier, and concludes with a introduction to creating simple custom addins.",
+      "speakers":[
+         {
+            "id":20,
+            "name":"Michael Hutchinson",
+            "twitterHandle":"mjhutchinson",
+            "bio":"Michael has been working on the open-source MonoDevelop IDE and other projects in the Mono ecosystem since taking part in the 2005 Summer of Code. In 2007 he joined Novell, where he was responsible for IDE tooling for web, mobile and Mac technologies such as ASP.NET, MonoTouch, Mono for Android and MonoMac. At Xamarin, he continues to work on making MonoDevelop a first-class development experience.",
+            "headshotUrl":"/images/speakers/michael.jpg"
+         }
+      ],
+      "begins":"2012-10-18T13:45:00.0000000-04:00",
+      "ends":"2012-10-18T14:45:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":13,
+      "title":"Embedding the Mono Runtime",
+      "abstract":"While mono is most commonly used to run managed applications, there are a number of cases where embedding the mono runtime within a native application is desirable. Everything one needs to know about embedded mono with be covered. A sample application will demonstrate a basic embedding scenario across multiple desktop platforms, design considerations for embedding mono and .Net runtimes, debugging embedding mono runtimes via MonoDevelop, performance considerations when embedding mono, security considerations when embedding mono, and native debugging and troubleshooting mechanisms.",
+      "speakers":[
+         {
+            "id":21,
+            "name":"Jonathan Chambers",
+            "twitterHandle":"jon_cham",
+            "bio":"Jonathan works at Unity Technologies making mono do awesome things within the Unity3d game engine. He's been a long time mono contributor, focusing primarily on Windows support within mono. Prior to joining Unity, Jonathan worked at Ansys delivering engineering simulation software across a variety of platforms.",
+            "headshotUrl":"/images/speakers/jonathan.jpg"
+         }
+      ],
+      "begins":"2012-10-18T09:00:00.0000000-04:00",
+      "ends":"2012-10-18T10:00:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":14,
+      "title":"A Cross-Platform Sensor Framework Based on .NET using the Mono and Microsoft Development Stacks",
+      "abstract":"Columbia College Chicago is actively researching technology solutions in the field of crisis management and is developing a distributed sensor framework to assist first responders.  The project makes heavy use of Xamarin and Microsoft tools to implement the remotes sensors, central servers and control nodes for sending commands to sensors.  This talk will present a brief overview of the research that drove this project, the current state of the design and architecture and will examine the code that implements the various nodes in this topology.  The system designers will discuss the use of .NET in all three layers of the architecture and will walk through the code to demonstrate how the core classes and interfaces were implemented as common libraries that compile without modification in MonoDevelop and Visual Studio.  The cross-platform design will be demonstrated using an iOS client and also a Windows Phone client in addition to the ASP.NET MVC 3 server running on IIS.  Sensor to server communication will be demonstrated using a web service layer (based on RestSharp) that implements command polling and data uploading in a common library that is shared by all clients and the server.  The ultimate proof of the cross-platform promise of .NET and Mono will be shown by a brief code review of the sensor base classes and by comparing the large amount of code that resides in the base classes to the very small amount of code which is client-specific.  The final demonstration of cross-platform goodness will be a look into the unit testing strategy that allows common client code to be tested in Visual Studio and compiled without modification in MonoDevelop.  There are no #IFDEFs here!  This talk will discuss architectural design choices and constraints in the beginning, but the bulk of the presentation will highlight working code and demonstrations of .NET core logic being easily retargeted into MonoDevelop and Visual Studio.  This project largely succeeded due to the strength of the Xamarin tool suite and the awesome compatibility of .NET/C# between platforms.  The presenters will emphasize design commonality, code reuse, and testability based on these strengths.",
+      "speakers":[
+         {
+            "id":23,
+            "name":"Steve Millar",
+            "twitterHandle":"samillar77",
+            "bio":"Steve Millar is the founder of Infinitek, an independent software development shop specializing in distributed systems using the .Net stack.  He has a passion for writing code and for learning new technologies by coming up with fun projects that need software to make them go.",
+            "headshotUrl":"/images/speakers/steve.jpg"
+         },
+         {
+            "id":24,
+            "name":"David Gerding",
+            "twitterHandle":"davidgerding",
+            "bio":"David Gerding, MBA, is an associate professor in the Department of Interactive Arts & Media at Columbia College Chicago.   Professor Gerding is a McCarthy Technologies certified team and collaboration skills facilitator, a Microsoft Certified Systems Engineer and a co-author of the programming text “ASP.NET Namespace Reference” by WROX Publishers (2002). His consulting clients over the years have included both consulting firms like McKinsey Company, Sanwa Bank, DFC Intelligence and McCarthy Technologies as well as small to mid-size enterprises and startups in a variety of markets.  Professor Gerding has served as principal investigator of a series of large federally funded cooperative agreements with the US Army Research Lab investigating sensor fusion applications in social contexts.",
+            "headshotUrl":"/images/speakers/dave.jpg"
+         }
+      ],
+      "begins":"2012-10-17T11:30:00.0000000-04:00",
+      "ends":"2012-10-17T12:30:00.0000000-04:00",
+      "location":"Adams"
+   },
+   {
+      "id":15,
+      "title":"Going Mobile",
+      "abstract":"I will present what I learnt in my transition form an enterprise C# developer to a mobile developer (iOS, Android, WP7). I will contrast the differences between developing desktop/web apps to mobile apps, identify the pitfalls and provide some guidance in how to get started.",
+      "speakers":[
+         {
+            "id":22,
+            "name":"Somya Jain",
+            "twitterHandle":"somya_j",
+            "bio":"After 11 years as an enterprise software developer/tech lead/architect, I am now a freelance mobile developer (iOS, Android & Windows Phone), based in New York City. I focus on multi-platform mobile apps. Several apps that I have worked on, have been featured on the app store, with one making it into the top 10 free apps.",
+            "headshotUrl":"/images/speakers/somya.jpg"
+         }
+      ],
+      "begins":"2012-10-17T10:15:00.0000000-04:00",
+      "ends":"2012-10-17T11:15:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":16,
+      "title":"Sharing iOS and Android Views in MonoCross",
+      "abstract":"MonoCross is a framework that allows you to share the model and controller layers of your .NET model-view-controller app. Used with MonoTouch.Dialog and Android.Dialog, you can also write views with shared logic. This session will show you how to use these frameworks together to write an application with shared logic in your iOS and Android presentation layers.",
+      "speakers":[
+         {
+            "id":25,
+            "name":"Sam Lippert",
+            "twitterHandle":"lippertz",
+            "bio":"Sam is a programmer with proficiencies in .NET and Java. Since 2007, he’s been involved in team projects utilizing these technologies, both as a leader and participant. He has consulted for clients such as C. H. Robinson, 3M, and Medtronic, working closely with their developers and business analysts. He has contributed to thought leadership in the field of cross-platform mobility architecture by contributing to Android.Dialog, and to the MonoCross project in extending it to WPF and by making formative changes to its Android target. He is acknowledged in the book Cross-Platform Mobile Development in C#, which utilizes this work.",
+            "headshotUrl":"/images/speakers/sam.jpg"
+         }
+      ],
+      "begins":"2012-10-19T10:15:00.0000000-04:00",
+      "ends":"2012-10-19T11:15:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":17,
+      "title":"F#, Type Providers and the Future of Data-Intensive Programming",
+      "abstract":"F# 3.0 for Visual Studio 2012 (and coming for Mono) includes an endlessly fascinating language feature called \"Type Providers\". In this talk, we\u2019ll explore how this feature lets you access internet-scale information sources and services like Freebase, Azure Data Market, OData and the World Bank in a stunningly simple, intuitive and strongly-typed way.  Then we\u2019ll look at other applications of Type Providers that surprise and delight, including Hadoop/Hive programming and the open source provider for using R packages from F#.  We\u2019ll also discuss how you can get going with the open source release of F# and how you can contribute to and provide leadership for the F# open source community.",
+      "speakers":[
+         {
+            "id":26,
+            "name":"Don Syme",
+            "twitterHandle":"dsyme",
+            "bio":"Don Syme is a Principal Researcher at Microsoft Research, UK. He has worked on both C# and F#, including initiating .NET Generics, F# type providers and language-integrated async programming in F# and C#. He’s an advocate of functional-first strongly-typed programming, and is fan of all initiatives that make programming simpler and better.",
+            "headshotUrl":"/images/speakers/don.jpg"
+         }
+      ],
+      "begins":"2012-10-18T15:00:00.0000000-04:00",
+      "ends":"2012-10-18T16:00:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":18,
+      "title":"MonoGame - Where we are and where we're going",
+      "abstract":"MonoGame has come on in leaps and bounds in the last year, its popularity is growing and more and more developers are using it. This session will give you insight into what you can do with the latest release of MonoGame, and where we plan to take the project next. It will attempt to incur the wrath of the demo gods by showing live examples of games that are already using MonoGame and showing off some of the new features. So if you are interested in Games or are just curious come along and learn what MonoGame is all about.",
+      "speakers":[
+         {
+            "id":8,
+            "name":"Dean Ellis",
+            "twitterHandle":"infspacestudios",
+            "bio":"Dean Ellis has been a software engineer for the last 15 years. He currently works for Aurora Computer Services Ltd developing and maintaining Face Recongnition Kiosks using C# .Net and Mono as well as developing desktop, web and mobile based softare solutions.\n\nIn his spare time he is one of the project coordinators and a contributor to MonoGame an open source, multi platform implementation of XNA.",
+            "headshotUrl":"/images/speakers/dean.jpg"
+         }
+      ],
+      "begins":"2012-10-17T11:30:00.0000000-04:00",
+      "ends":"2012-10-17T12:30:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":19,
+      "title":"The Epic Battle of the Managed Assembly Readers/Writers",
+      "abstract":"IKVM.Reflection and Mono.Cecil can read and write managed assemblies, but they have a different approach and API. Even though they share a lot of similarities, both are complementary, and fantastic tools for the .net and Mono programmer.\n\nIKVM.Reflection is now powering the Mono C# Compiler, and Cecil's user list keeps growing. This session will show all the power that a developer gains by having complete control over the binaries he produces, and also to demonstrate where each tool really shines.\n\nTo make things even more interesting, both authors will switch roles and act as the proponent of the other library.",
+      "speakers":[
+         {
+            "id":5,
+            "name":"Jb Evain",
+            "twitterHandle":"jbevain",
+            "bio":"Jb is the founder of SyntaxTree, a developer tools company. He's the author of Mono.Cecil, a widely used library in the .net ecosystem, and a long time Mono contributor. He has a soft spot for programming languages, compilers, decompilers and tools alike.",
+            "headshotUrl":"/images/speakers/jb.jpg"
+         },
+         {
+            "id":6,
+            "name":"Jeroen Frijters",
+            "twitterHandle":"jeroenfrijters",
+            "bio":"Jeroen is the co-founder of Sumatra Software b.v. and the founder of the IKVM.NET project. He likes to develop in C#, write cranky blog posts, find security vulnerabilities and spelunk the internals of the JVM and CLR.",
+            "headshotUrl":"/images/speakers/jeroen.jpg"
+         }
+      ],
+      "begins":"2012-10-17T15:00:00.0000000-04:00",
+      "ends":"2012-10-17T16:00:00.0000000-04:00",
+      "location":"Adams"
+   },
+   {
+      "id":21,
+      "title":"A head start with MonoTouch 6",
+      "abstract":"With the newly announced iOS 6 and MonoTouch 6, come and find out how you can improve your apps by taking advantage of the new features with MonoTouch 6. This includes targeting the iPhone 5, using UICollectionViews, PassKit and making your apps more social with the SocialKit framework. Hopefully there will be a few other surprises thrown in too...",
+      "speakers":[
+         {
+            "id":0,
+            "name":"Chris Hardy",
+            "twitterHandle":"chrisntr",
+            "bio":"Chris Hardy, a Microsoft ASPInsider, is an .NET consultant focusing on MonoTouch and Mono for Android development.\n\nEver since MonoTouch was in beta, Chris has been developing and evangelising MonoTouch and Mono for Android and was one of the first users to get a MonoTouch application on to the App Store. Speaking at conferences around the world on the subject, Chris has been a key part of the community and extended this by contributing to MonoTouch and Mono for Android books.",
+            "headshotUrl":"/images/speakers/chris.jpg"
+         }
+      ],
+      "begins":"2012-10-17T13:45:00.0000000-04:00",
+      "ends":"2012-10-17T14:45:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":22,
+      "title":"Expanding ServiceStack's reach with Mono",
+      "abstract":"ServiceStack is a popular Web Service Framework for the .NET and Mono platforms that's providing a simpler and faster alternative to WCF for any remote service development. This session will go through ServiceStack's key features showcasing how easy it makes it to create typed, high-performance web services and the natural benefits of its message-based design.",
+      "speakers":[
+         {
+            "id":1,
+            "name":"Demis Bellot",
+            "twitterHandle":"demisbellot",
+            "bio":"Demis Bellot is a developer at Stack Exchange where he maintains StackOverflow Careers 2.0 Back Office Web & MQ services built on ServiceStack - an Open Source, high-performance, cross-platform Web Services framework. ServiceStack includes a number of lean components for developing high-performance web services, including: .NET's fastest JSON and text serializers, leading C# RedisClient, One of .NET's fastest POCO-based Micro ORMS, Caching, Session, Logging & authentication providers as well a node.js powered css, less, sass, coffeescript & js minifier & bundler.",
+            "headshotUrl":"/images/speakers/demis.jpg"
+         }
+      ],
+      "begins":"2012-10-17T11:30:00.0000000-04:00",
+      "ends":"2012-10-17T12:30:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":23,
+      "title":"A Return to Rapid Application Development",
+      "abstract":"We've all lost our way. We were given tools and languages to build component based applications but have steered away from them. Our tools are no longer app builders, they're UI builders. Our libraries are no longer components but scriptable classes. Why did this happen? Was the goal of Rapid Application Development impossible to reach? This talk will investigate the past, take a critical look at the present, blame the web, and offer some thoughts on the future of app development.",
+      "speakers":[
+         {
+            "id":2,
+            "name":"Frank Krueger",
+            "twitterHandle":"praeclarum",
+            "bio":"Frank has been programming professionally for 14 years with most of that time spent on the Windows platform but now spends his time on the Mono Platform. He has rejected his Electrical Engineering education and focuses today on mobile app and web app development using a variety of platforms. Past projects include embedded engine management system development, scientific simulators, tooling for graphics and game developers, online retail, and control software for naval ships. He runs a small consulting business in Seattle, WA that enables him to work on a variety of projects in a variety of industries. Today he is most excited about the mobile platform and opportunities for advancing the state of the art of the human-machine interface.",
+            "headshotUrl":"/images/speakers/frank.jpg"
+         }
+      ],
+      "begins":"2012-10-19T09:00:00.0000000-04:00",
+      "ends":"2012-10-19T10:00:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":24,
+      "title":"Cross-Platform Mobile Development with C#",
+      "abstract":"The mobile space continues to heat up, but every platform has its own language and set of tools you must use if you want to deliver a fully native experience to your users. Did you know that you can actually use C# and the .NET Framework to build native applications for iOS, Android and Windows Phone? Using C# and .NET across the board also means that you have the opportunity to share large amounts of code between platforms. In this session we'll look at how to develop cross-platform mobile applications with C#, making use of MonoTouch and Mono for Android for iOS and Android. We'll also explore various techniques and patterns to help maximize how much code can be shared across all platforms.",
+      "speakers":[
+         {
+            "id":3,
+            "name":"Greg Shackles",
+            "twitterHandle":"gshackles",
+            "bio":"Greg Shackles is a Senior Software Engineer at OLO Online Ordering, based in New York City. His book, Mobile Development with C#, published by O'Reilly, covers how to get started building iOS, Android and Windows Phone apps with C#. As an active member of the community, Greg speaks regularly at many user groups and developer events, and is also a co-author of a monthly Mono for Android column for Visual Studio Magazine.\n\nOutside of technology, Greg is obsessed with heavy metal, baseball, and craft beer, sometimes in combination, as well as an aspiring homebrewer.",
+            "headshotUrl":"/images/speakers/greg.jpg"
+         }
+      ],
+      "begins":"2012-10-18T11:30:00.0000000-04:00",
+      "ends":"2012-10-18T12:30:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":25,
+      "title":"Jazz up your open source project with GitHub",
+      "abstract":"GitHub embodies the concept of \"social coding\" as a place for developers to host and collaborate on open source code. But many developers don't get the full benefits of GitHub. In this talk, you'll learn a bit about GitHub the company and how its philosophy is infused in GitHub products. You'll also learn to boost the effectiveness of your open source efforts with lesser known features of GitHub.",
+      "speakers":[
+         {
+            "id":7,
+            "name":"Phil Haack",
+            "twitterHandle":"haacked",
+            "bio":"Phil Haack (yes, it's pronounced \"hack\") works at GitHub finding ways to make it better for .NET and Windows developers everywhere. Prior to GitHub, he was a senior Program Manager at Microsoft responsible for shipping ASP.NET MVC, NuGet, among other projects.",
+            "headshotUrl":"/images/speakers/phil.jpg"
+         }
+      ],
+      "begins":"2012-10-17T13:45:00.0000000-04:00",
+      "ends":"2012-10-17T14:45:00.0000000-04:00",
+      "location":"Sampson"
+   },
+   {
+      "id":26,
+      "title":"Registration",
+      "abstract":"Please arrive early to register, once registered you can mingle and get ready for the keynote.",
+      "speakers":[
+
+      ],
+      "begins":"2012-10-17T08:00:00.0000000-04:00",
+      "ends":"2012-10-17T09:00:00.0000000-04:00",
+      "location":"Main Hall"
+   },
+   {
+      "id":27,
+      "title":"Open Space Proposals",
+      "abstract":"We turn the table on you and allow you to determine the agenda for the last day of MonkeySpace.",
+      "speakers":[
+
+      ],
+      "begins":"2012-10-18T16:15:00.0000000-04:00",
+      "ends":"2012-10-18T17:15:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":28,
+      "title":"Attendee Party",
+      "abstract":"Come out and party like a rock star!\n\nSponsored by GitHub, the party will be held at The Meadhall starting at 19:00 on October 18, 2012. The 19:00 start time is very soft, don't feel you need to be there right on time. Feel free to take your time to grab dinner after the second day of the conference before heading over to the party. I'm sure we won't be in full swing until 20:00. We've arranged for an open bar as well as appetizers. We hope everybody can join us!\n\nThe Meadhall 4 Cambridge Center Cambridge MA 02142 617-714-4372",
+      "speakers":[
+
+      ],
+      "begins":"2012-10-18T19:00:00.0000000-04:00",
+      "ends":"2012-10-18T23:59:00.0000000-04:00",
+      "location":"The Meadhall"
+   },
+   {
+      "id":29,
+      "title":"Open Space",
+      "abstract":"The agenda for the open space will be posted the morning of.",
+      "speakers":[
+
+      ],
+      "begins":"2012-10-19T13:45:00.0000000-04:00",
+      "ends":"2012-10-19T17:15:00.0000000-04:00",
+      "location":"All Rooms"
+   },
+   {
+      "id":30,
+      "title":"DNR Road Trip",
+      "abstract":"Guess who's stopping by to crash the party? The #dnrRoadTrip, that's who! Join Carl Franklin and Richard Campbell as they record a live .NET Rocks Show with Don Syme as their guest.\n\nhttp://dotnetrocks.com/roadtrip.aspx",
+      "speakers":[
+         {
+            "id":26,
+            "name":"Don Syme",
+            "twitterHandle":"dsyme",
+            "bio":"Don Syme is a Principal Researcher at Microsoft Research, UK. He has worked on both C# and F#, including initiating .NET Generics, F# type providers and language-integrated async programming in F# and C#. He’s an advocate of functional-first strongly-typed programming, and is fan of all initiatives that make programming simpler and better.",
+            "headshotUrl":"/images/speakers/don.jpg"
+         }
+      ],
+      "begins":"2012-10-17T19:30:00.0000000-04:00",
+      "ends":"2012-10-17T22:00:00.0000000-04:00",
+      "location":"Mann"
+   },
+   {
+      "id":31,
+      "title":"SignalR: Websockets, Magic & Awesome, in Real-Time",
+      "abstract":"Forget what you know about the web because real-time is here and it's truly mind blowing. SignalR makes real-time web programming stupid easy and crazy awesome.",
+      "speakers":[
+         {
+            "id":28,
+            "name":"David Fowler",
+            "twitterHandle":"davidfowl",
+            "bio":"David Fowler is a senior developer on the Azure team at Microsoft currently working full time on SignalR. He has worked on several projects including ASP.NET WebForms and ASP.NET WebPages. He is one of the creators of NuGet, SignalR, Jabbr.net, and Kudu. He hails from Barbados and attended college at Florida Tech.",
+            "headshotUrl":"/images/speakers/david.jpg"
+         }
+      ],
+      "begins":"2012-10-18T10:15:00.0000000-04:00",
+      "ends":"2012-10-18T11:15:00.0000000-04:00",
+      "location":"Mann"
+   }
+]

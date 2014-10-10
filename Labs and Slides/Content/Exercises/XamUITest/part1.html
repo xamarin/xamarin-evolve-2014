@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>XTC 102 - Xamarin.UITest</header>
+
+    <section id="main">
+
+        <h1>Exercise 1: Xamarin.UITest</h1>
+        <h2>Estimated Time: 20 minutes</h2>
+
+        <h2>Goals</h2>
+        <p>
+        The primary goal of this exercise will be to ensure that you can successfully execute a Xamarin.UITest.
+        </p>
+
+        <h1>Steps</h1>
+
+        <h2>Examine the binary package</h2>
+        <p>
+        This lab has two existing applications, one for Android and the other for iOS, which create a Task application called TaskyPro. You will be executing these applications using Xamarin.UITest. Both of them can be found in the <strong>Content/Exercises/XamUITest/Binaries</strong> folder.
+        </p>
+
+        <h2>Create a Unit Test project</h2>
+        <ol>
+            <li>Create a new NUnit project from Xamarin Studio.</li>
+            <li>Right-click on project and select Add solution folder called <b>Unit Test</b>, select Add and then 'Packages...'</li>
+            <li>Search for Xamarin.UITest and add that package to your project</li>
+            <li>Add Xamarin.UITest to your list of references in your text file </li>
+
+            <li>Create a new test that connects to the application found in the <strong>Content/Exercises/XamUITest/Binaries</strong> folder.</li>
+        </ol>
+
+<h3>Android</h3>
+<pre class="indent-medium prettyprint codeblock">
+var app = ConfigureApp.Android.ApkFile(path).StartApp()
+</pre>
+
+<h3>iOS</h3>
+<pre class="indent-medium rettyprint codeblock">
+var app = ConfigureApp.iOS.AppBundle(pathToAppFile).StartApp
+</pre>
+        <ol start="6">
+            <li>Use the <code>app.Repl()</code> method to query and control the user interface</li>
+            <li>Once you have that, write a unit test that creates a new task and saves it to the application and verifies that the test appears.</li>
+            <li>Execute the Unit Test using the NUnit test runner.</li>
+            <li>If you have time, write a unit test that attempts to add an entry, but the user cancels before saving. If you still have time then, write a test where a user deletes an existing entry</li>
+         </ol>
+
+        <h1>Summary</h1>
+        <p>
+        There is a completed version of this project in the <strong>Part 01 Resources</strong> folder included with this exercise.
+        </p>
+
+        <div class="align-right">
+            <a href="javascript:history.back()">Back</a>
+        </div>
+    </section>
+
+    <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

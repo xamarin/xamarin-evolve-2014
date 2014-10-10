@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Contact Details"
+			 x:Class="MyContacts.ContactDetails">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem x:Name="showButton" Name="Show" Activated="OnShow" Icon="ic_action_search.png" />
+	</ContentPage.ToolbarItems>
+
+	<ScrollView>
+		<StackLayout Spacing="10">
+			<StackLayout.Padding>
+				<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+			</StackLayout.Padding>
+
+			<Image x:Name="headshot" HeightRequest="200" Aspect="AspectFit" />
+
+			<Label Text="Name" Font="Bold" />
+			<Entry Text="{Binding Name, Mode=TwoWay}" />
+
+			<Label Text="Email" Font="Bold" />
+			<Entry Text="{Binding Email, Mode=TwoWay}" />
+
+			<Label Text="Gender" Font="Bold" />
+			<Picker x:Name="genderPicker">
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                </Picker.Items>
+            </Picker>
+
+			<Label Text="Birthday" Font="Bold" />
+			<DatePicker Date="{Binding Dob, Mode=TwoWay}" />
+
+			<Label Text="Favorite" Font="Bold" />
+			<Switch IsToggled="{Binding IsFavorite, Mode=TwoWay}" />
+
+		</StackLayout>
+	</ScrollView>
+</ContentPage>

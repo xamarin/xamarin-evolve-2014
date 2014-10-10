@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="activity_speakers_label">Speakers</string>
+	<string name="activity_sessions_label">Sessions</string>
+	<string name="activity_whats_on_label">What\'s On</string>
+	<string name="activity_my_schedule_label">Favourites</string>
+	<string name="app_name">Stack</string>
+	<plurals name="speaker_sessions">
+		<item quantity="one">One session.</item>
+		<item quantity="other">%d sessions.</item>
+	</plurals>
+</resources>

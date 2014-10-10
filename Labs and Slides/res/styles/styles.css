@@ -1,0 +1,250 @@
+html {
+	margin: 0;
+	padding: 0;
+	background: white;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	font-size: 15px;
+	line-height: normal;
+	padding: 0;
+}
+
+section#main {
+	margin-top: 5px;
+	margin-left: 20px;
+	margin-right: 20px;
+	max-width: 900px;
+}
+
+#main {
+	overflow: auto;
+	min-height: 100%;
+	padding-bottom: 60px;
+
+}
+
+header {
+	font-size: 16pt;
+	color: white;
+	height: 55px;
+	line-height: 55px;
+	background-color: #2c3e50;
+	background: #2c3e50 url('../images/xamarin-university-logo.png') no-repeat center right 20px;
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	width: 100%;
+}
+
+#header-logo {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+footer {
+	clear: both;
+	position: relative;
+	height:60px;
+	font-size: 9pt;
+	margin-left: 20px;
+	color: gray;
+}
+
+p {
+	margin-left: .5in;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 20pt;
+	display: block;
+	border-bottom: 1px solid black;
+	color: #2C3E50;
+}
+
+h2 {
+	margin-left: 0.25in;
+	margin-bottom: 0.1in;
+	font-size: 16pt;
+	font-weight: 400;
+	color: #3498DB;
+}
+
+h3 {
+	margin-left: 0.5in;
+	margin-bottom: 0.1in;
+	font-size: 14pt;
+}
+
+h4 {
+	margin-left: .75in;
+	margin-bottom: 0.1in;
+	font-size: 12pt;
+}
+
+h5 {
+	margin-left: 1in;
+	margin-bottom: 0.1in;
+	font-size: 10pt;
+}
+
+img {
+	clear: both;
+	display: block;
+	margin-top: 0.1in;
+	margin-bottom: 0.1in;
+	margin-left: 1in;
+}
+
+ol,dl,ul,p {
+	line-height: 1.5;
+}
+
+strong, b {
+	font-family: "Helvetica Neue Bold", "Helvetica Bold", sans-serif;
+	font-weight: bold;
+}
+
+strong > 0 {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+ol,dl,ul {
+	margin-left: .25in;
+}
+
+a {
+	cursor: pointer;
+}
+
+a:link, a:visited {
+	color: #186ac1;
+}
+
+
+a:hover {
+	color: #3697ff;
+}
+
+.codeblock {
+	border: 1px solid #fcfcfc;
+	background: #f0f0f0;
+	padding: 5px;
+	margin-top: .1in;
+	margin-bottom: .1in;
+}
+
+.hintblock {
+	border: 1px solid #EAC117;
+	background: #FFFFE2;
+	padding: 5px;
+	margin-top: .1in;
+	margin-left: .25in;
+	margin-right: .25in;
+	margin-bottom: .1in;
+}
+
+.uiitem {
+	background: #f0f0f0;
+	padding: 3px 4px;
+	border-radius: 3px;
+	border: thin solid rgba(0, 0, 0, 0.2);
+	color: inherit;
+}
+
+.objective {
+	font-size: 12pt;
+	font-weight: bold;
+	margin-left: 0;
+	margin-top: .1in;
+}
+
+a.uiitem {
+	text-decoration: none;
+}
+
+.align-right {
+	clear: both;
+	float: right;
+	margin-top: 50px;
+	margin-right: 10px;
+}
+
+.header {
+	color: darkmagenta;
+	font-size: 13pt;
+}
+
+.agenda {
+	margin-top: 1em;
+	border-width: 1px;
+	border-color: #909090;
+	border-collapse: collapse;
+}
+
+.agenda th {
+	border-width: 1px;
+	padding: 8px;
+	text-align: left;
+	border-style: solid;
+	border-color: #909090;
+	font-weight: bold;
+}
+
+ul.links {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	list-style: square;
+}
+
+.agenda td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #909090;
+}
+
+.agenda tr:nth-child(even) {
+	background-color:#ffffff;
+}
+
+.agenda tr:nth-child(odd) {
+	background-color:#f0f0f0;
+}
+
+.highlight {
+  background-color: #ff0;
+}
+
+/* For prettify */
+.com	   { color: #008000; }
+.str, .tag { color: #A31515; }
+.kwd, .atv { color: #0000FF; }
+.typ	   { color: #2B91AF; }
+.lit, .atn { color: #FF0000; }
+.pun, .pln { color: #000000; }
+.dec	   { color: #800080; }
+
+pre.prettyprint{
+	width: auto;
+	margin-right: 50px;
+	overflow: auto;
+	max-height: 600px
+}

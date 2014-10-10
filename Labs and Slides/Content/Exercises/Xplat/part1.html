@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>Intro to Cross-Platform Mobile Development</header>
+
+    <section id="main">
+
+        <h1>Exercise 1: Working with Shared Projects</h1>
+        <h2>Duration:</h2>
+        <p>20 minutes</p>
+
+        <h2>Lab Goals</h2>
+        <p>
+        The primary goal of this exercise will be to load some Json data in from a file and use it as a source to display information in an iOS, Android and Windows Phone application. The code to manage the loading of the file will be completely shared between the projects using a Shared Project.
+        </p>
+        <p>We will need to do the following steps</p>
+        <ol class="indent-medium">
+            <li>Create a new Shared Project</li>
+            <li>Add 2 shared source files (<strong>Song.cs</strong> and <strong>SongLoader.cs</strong>) to the shared project - these have already been written for you and are in the lab resources folder.</li>
+            <li>Add a reference to the Shared Project to each of your target projects</li>
+            <li>Add a Nuget reference to Newtonsoft's Json.net parser which is used by the shared project code into each target project.</li>
+            <li>Add a data file into each of the target projects which is processed by the shared code.</li>
+            <li>Modify the shared code to properly load the file based on the platform.</li>
+        </ol>
+
+        <h2>Development Environment Notes</h2>
+        <h3>Xamarin Studio on the Mac</h3>
+        <p>
+            You will only be able to load two of the three projects - Windows Phone is not a supported platform and you will get an error indicating the project cannot be loaded. It is safe to ignore this error; just work with the iOS and
+            Android portions of the lab.
+        </p>
+        <h3>Visual Studio on Windows</h3>
+        <p>
+             You will need to make sure you are running <a href="http://support.microsoft.com/kb/2927432">Visual Studio 2013 with Update 2 or Update 3 applied</a>, and also install an <a href="http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450">extension which will allow you to use Shared Projects in all projects types</a>. This extension can be installed inside Visual Studio through the <b>Tools > Extensions and Updates...</b> menu option. Then select <strong>Online</strong> in the tree and search for <strong>Shared Project Reference Manager</strong>. Select it and click the <strong>Download</strong> button.
+            <br />
+            <img src="./res/images/VS-extension.png" />
+        </p>
+
+        <h2>Required Assets</h2>
+        <p>
+        There are included resources in the <strong>Content/Exercises/Xplat/Part 01 Resources</strong> folder which are needed to complete this exercise. These are included with the course materials, so make sure you have them available before starting.</p>
+
+        <h2>Exercise Challenge</h2>
+        <p>
+        Using the <a href="./worksheet.html#part2">Worksheet</a> to give you the information you need, try to accomplish the lab goals on your own. If you need some additional help, there are <a href="#steps">step-by-step instructions below</a> which you can use if you get stuck or need a hint.
+        </p>
+
+        <h1 id="steps">Steps</h1>
+
+        <h2>Open the Starter Solution</h2>
+        <ol>
+            <li>Open the starting project <strong>MyTunes</strong> included in the <strong>Part 01 Resources</strong> folder with either Xamarin Studio on the Mac, or Visual Studio on Windows.</li>
+            <li>You can run any of the projects - they all present a simple list of data, except the Windows Phone application which will show a blank screen.</li>
+        </ol>
+
+        <h2>Add the Shared Project</h2>
+        <ol>
+            <li>Right click on the solution node and add a new project.</li>
+            <li>Select Shared Project - it can be found under C# if everything is configured properly. See the screen shots below if you are having trouble.</li>
+            <li>Name the project &quot;MyTunes.Shared&quot;</li>
+            <li>You can delete the initial file added to the project if there is one (Xamarin Studio currently adds an empty file).
+        </ol>
+
+        <img src="./res/images/New-Project-XamStudio.png" />
+        <img src="./res/images/New-Project-VS.png" />
+
+        <h2>Add the code into the Shared Project</h2>
+        <ol>
+            <li>In the <strong>Part 01 Resources</strong> folder there is a <strong>data</strong> sub-folder with two C# source files:</li>
+            <ul class="indent-none">
+                <li><strong>Song.cs</strong> - this defines a class which provides information about a single song.</li>
+                <li><strong>SongLoader.cs</strong> - this is a class which can parse a JSON file off disk into a set of <code>Song</code> objects. It utilizes the Newtonsoft Json.net parser.</li>
+            </ul>
+            <li>Add both C# files to your shared project - you can add existing files to shared projects in the normal fashion.</li>
+            <li>Look at both source files to get a sense of the content you will be working with.</li>
+        </ol>
+
+        <h2>Add a Reference to the Shared Project</h2>
+        <ol>
+            <li>In Xamarin Studio, you can add a reference to the Shared Project like any other reference - just use the <strong>References Folder</strong>. In Visual Studio, you will need to select a new option: <strong>Add Shared Project Reference</strong> from the references context menu:</li>
+            <img src="./res/images/AddSharedReference-VS.png" />
+            <li>Do the same for each of the other projects you want to work with (iOS | Windows | Android).</li>
+            <li>Try to build the projects - it should give you compile errors because we don't have a reference to the Newtonsoft Json.net parser which is used by the shared code.</li>
+            <li>If you open the <strong>SongLoader.cs</strong> file, you will see that the identifiers are all colored in red.</li>
+        </ol>
+
+        <h2>Add a Nuget reference to Json.net</h2>
+        <ol>
+            <li>Open the Nuget references - in Visual Studio, this is available as an option on the <strong>References</strong> folder, on Xamarin Studio you need to right-click on the <strong>Project</strong> node and select: <strong>Add > Add Packages...</strong></li>
+            <img src="./res/images/AddReference-XamStudio.png" />
+            <li>Search online and find the Json.net component - it should be one of the first packages displayed due to it's popularity.</li>
+            <img src="./res/images/AddPackage-XS.png" />
+            <img src="./res/images/AddPackage-VS.png" />
+            <li>Add the package to each of your supported platforms - the package must be added into the <em>target platform</em> projects, notice that the Shared Project does not even have a references node!</li>
+            <li>Look at the <code>SongLoader</code> class again - notice it now is color coded properly because the reference has been added. The project should also compile now.</li>
+        </ol>
+
+        <h2>Use the Song Loader</h2>
+        <p>Now, lets's add some code into each project to use the SongLoader to populate the UI. Pick each platform you want to run and use the steps below to adjust the code.</p>
+
+        <h3>iOS</h3>
+        <ol class="indent-medium">
+            <li>Locate the <code>ViewDidLoad</code> method in the <code>MyTunesViewController</code>.</li>
+            <li>Comment out the existing <code>TableView.Source</code> assignment.</li>
+            <div class="hintblock">
+            The <code>ViewControllerSource</code> being used here is a simple, generic, <code>UITableViewSource</code> that uses delegates to identify the text and detail text for a row. You can examine the source code in the corresponding source file.
+            </div>
+            <li>Make a call to load the data using <code>SongLoader.Load</code>. This method is async, so you will need to decorate the method with <code>async</code> and use the <code>await</code> keyword.</li>
+            <li>Take the resulting data and turn it into a <code>List&lt;Song&gt;</code>.</li>
+            <li>Create a new <code>ViewControllerSource&lt;Song&gt;</code> and assign the following properties:</li>
+            <ul class="indent-none">
+                <li><code>DataSource</code> property to your new list.</li>
+                <li><code>TextProc</code> to a lambda that returns the name: <code>s => s.Name</code>.</li>
+                <li><code>DetailTextProc</code> to a lambda that returns the artist and album: <code>s => s.Artist + " - " + s.Album</code>.</li>
+            </ul>
+            <li>Assign the table source to the <code>TableView.Source</code> property.</li>
+        </ol>
+        <p><a href="#" onclick="toggleCode(this,'useLoader_ios');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="useLoader_ios" style="display:none;">
+<pre class="prettyprint">
+public <span class="highlight">async</span> override void ViewDidLoad()
+{
+    base.ViewDidLoad();
+
+    //TableView.Source = new ViewControllerSource&lt;string&gt;(TableView) {
+    //    DataSource = new string[] { "One", "Two", "Three" },
+    //};
+<span class="highlight">
+    // Load the data
+    var data = await SongLoader.Load();
+
+    // Register the TableView's data source
+    TableView.Source = new ViewControllerSource&lt;Song&gt;(TableView)
+    {
+        DataSource = data.ToList(),
+        TextProc = s => s.Name,
+        DetailTextProc = s => s.Artist + " - " + s.Album,
+    };
+</span>
+}
+</pre>
+            </div>
+        </p>
+
+        <h3>Android</h3>
+        <ol class="indent-medium">
+            <li>Locate the <code>OnCreate</code> method in the <code>MainActivity</code>.</li>
+            <li>Comment out the existing <code>ListAdapter</code> assignment.</li>
+            <div class="hintblock">
+            The <code>ListAdapter</code> being used here is a simple, generic, <code>BaseAdapter</code> that uses delegates to identify the text and detail text for a row. You can examine the source code in the corresponding source file.
+            </div>
+            <li>Make a call to load the data using <code>SongLoader.Load</code>. This method is async, so you will need to decorate the method with <code>async</code> and use the <code>await</code> keyword.</li>
+            <li>Take the resulting data and turn it into a <code>List&lt;Song&gt;</code>.</li>
+            <li>Create a new <code>ListAdapter&lt;Song&gt;</code> and assign the following properties:</li>
+            <ul class="indent-none">
+                <li><code>DataSource</code> property to your new list.</li>
+                <li><code>TextProc</code> to a lambda that returns the name: <code>s => s.Name</code>.</li>
+                <li><code>DetailTextProc</code> to a lambda that returns the artist and album: <code>s => s.Artist + " - " + s.Album</code>.</li>
+            </ul>
+            <li>Assign the object to the <code>ListAdapter</code> property.</li>
+        </ol>
+        <p><a href="#" onclick="toggleCode(this,'useLoader_droid');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="useLoader_droid" style="display:none;">
+<pre class="prettyprint">
+protected <span class="highlight">async</span> override void OnCreate(Bundle bundle)
+{
+    base.OnCreate(bundle);
+
+    //ListAdapter = new ListAdapter&lt;string&gt;() {
+    //    DataSource = new[] { "One", "Two", "Three" }
+    //};
+
+    var data = await SongLoader.Load();
+<span class="highlight">
+    ListAdapter = new ListAdapter&lt;Song&gt;()
+    {
+        DataSource = data.ToList(),
+        TextProc = s => s.Name,
+        DetailTextProc = s => s.Artist + " - " + s.Album
+    };
+</span>
+}
+</pre>
+            </div>
+        </p>
+
+        <h3>Windows Phone</h3>
+        <ol class="indent-medium">
+            <li>Locate the <code>OnNavigatedTo</code> method in the <code>MainPage</code>.</li>
+            <li>Make a call to load the data using <code>SongLoader.Load</code>. This method is async, so you will need to decorate the method with <code>async</code> and use the <code>await</code> keyword.</li>
+            <li>Take the resulting data and assign it to the <code>DataContext</code> property.</li>
+            <li>There is already a <code>DataTemplate</code> setup to display the song data.</li>
+        </ol>
+        <p><a href="#" onclick="toggleCode(this,'useLoader_wp8');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="useLoader_wp8" style="display:none;">
+<pre class="prettyprint">
+protected override <span class="highlight">async</span> void OnNavigatedTo(NavigationEventArgs e)
+{
+<span class="highlight">   DataContext = await SongLoader.Load();</span>
+}
+</pre>
+            </div>
+        </p>
+        <p>Make sure all your code compiles. It will fail at runtime because we don't have the data yet - let's do that next.</p>
+
+        <h2>Add the songs data file</h2>
+        <p>We will add the <strong>songs.json</strong> file from the <strong>Part 01 Resources</strong> folder into each target platform project - storing it into the normal resources area for each.</p>
+        <ol>
+            <li><strong>iOS</strong> - Add the <strong>songs.json</strong> file into the <strong>Resources</strong> folder and make sure the build action is marked as &quot;BundleResource&quot;</li>
+            <li><strong>Android</strong> - Add the <strong>songs.json</strong> file into the <strong>Assets</strong> folder and make sure the build action is marked as &quot;AndroidAsset&quot;</li>
+            <li><strong>Windows Phone</strong> - Add the <strong>songs.json</strong> file into the root of the project (so the filename will match) and set the build action to &quot;Content&quot;
+            <li>Make sure all your projects still build succesfully.</li>
+        </ol>
+
+        <h2>Add code to read the file</h2>
+        <p>Since we've got the data file stored in a platform-specific way, we will need to use platform-specific code to get to our data. We can use any of the three approaches outlined in the class session (conditional compilation, cloning and partial classes), and you should experiment and try each one in turn; however for the sake of time, we will use conditional compilation in these instructions.</p>
+        <p>All our work will be done in the <code>SongLoader</code> class, specifically the existing <code>OpenData</code> method which should open the file (the <code>Filename</code> constant defined in the file) and return a <code>System.IO.Stream</code>.</p>
+        <div class="hintblock">Pick the instructions for your target platforms you want to support. Note that if you work with Windows Phone, it will change some signatures because we are using the WinPRT APIs which have a completely new I/O API.</div>
+        <h3>iOS</h3>
+        <ol class="indent-medium">
+            <li>Add a conditional marker for the iOS code. Xamarin.iOS defines the <code>__IOS__</code> symbol for this.</li>
+            <li>In your conditional code block, use the <code>System.IO.File.OpenRead</code> method to open the filename.</li>
+            <li>Make sure the iOS project builds.</li>
+        </ol>
+<p><a href="#" onclick="toggleCode(this,'openFile_ios');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="openFile_ios" style="display:none;">
+<pre class="prettyprint">
+private static Stream OpenData()
+{
+#if __IOS__
+   return File.OpenRead(Filename);
+#else
+   // TODO: add code to open file here.
+   return null;
+#endif
+}
+</pre>
+            </div>
+        </p>
+
+        <h3>Android</h3>
+        <ol class="indent-medium">
+            <li>Add a conditional marker for the Android code. Xamarin.Android defines the <code>__ANDROID__</code> symbol for this.</li>
+            <li>In your conditional code block, use the <code>Android.App.Application.Context.Assets.Open</code> method to open the filename.</li>
+            <li>Make sure the Android project builds.</li>
+        </ol>
+<p><a href="#" onclick="toggleCode(this,'openFile_droid');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="openFile_droid" style="display:none;">
+<pre class="prettyprint">
+private static Stream OpenData()
+{
+#if __ANDROID__
+   return Android.App.Application.Context.Assets.Open(Filename);
+#else
+   // TODO: add code to open file here.
+   return null;
+#endif
+}
+</pre>
+            </div>
+        </p>
+
+        <h3>Windows Phone</h3>
+        <ol class="indent-medium">
+            <li>Add a conditional marker for the Windows Phone code. Microsoft defines the <code>WINDOWS_PHONE_APP</code> symbol for this.</li>
+            <li>In your conditional code block, use the <code>Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync</code> method to open the filename. This returns a <code>StorageFile</code>.</li>
+            <li>Call <code>OpenStreamForRead</code> on the <code>StorageFile</code> to retrieve a <code>Stream</code>.</li>
+            <li>Because WinPRT APIs are all async, you will need to change the app signature to be <code>async</code> and use the <code>await</code> keyword - the call site will also need to be adjusted for this.</li>
+            <li>The other platform code can remain the way it is - you will get a warning from the compiler because no <code>await</code> keyword is used even though the method is decorated with <code>async</code>.</li>
+            <li>Make sure the Windows Phone project builds.</li>
+        </ol>
+<p><a href="#" onclick="toggleCode(this,'openFile_wp8');return false;" class="uiitem">Show Code</a>
+            <div class="indent-large" id="openFile_wp8" style="display:none;">
+<pre class="prettyprint">
+public static async Task<IEnumerable<Song>> Load()
+{
+    using (var reader = new StreamReader(<span class="highlight">await</span> OpenData())) {
+        return JsonConvert.DeserializeObject&lt;List&lt;Song&gt;&gt;(
+                await reader.ReadToEndAsync());
+    }
+}
+
+private <span class="highlight">async</span> static Stream OpenData()
+{
+#if WINDOWS_PHONE_APP
+   var sf = await Windows.ApplicationModel.Package.Current
+                         .InstalledLocation.GetFileAsync(Filename);
+   return await sf.OpenStreamForReadAsync();
+#else
+   // TODO: add code to open file here.
+   return null;
+#endif
+}
+</pre>
+            </div>
+        </p>
+
+        <h2>Test the applications</h2>
+        <ol>
+            <li>Run each of the platforms - they should all display the song list.</li>
+        </ol>
+        <table>
+            <tr>
+                <td><img src="./res/images/android-final.png" /></td>
+                <td><img src="./res/images/ios-final.png" /></td>
+            </tr>
+            <tr>
+                <td><img src="./res/images/wp-final.png" /></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h1>Summary</h1>
+        <p>
+        In this exercise, we have created a Shared Project and used it in an iOS, Android and Windows Phone application. The library had both platform-agnostic code, as well as some platform-specific code isolated with conditional compilation.
+        </p>
+
+        <div class="align-right">
+            <a href="javascript:history.back()">Back</a>
+        </div>
+    </section>
+
+    <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

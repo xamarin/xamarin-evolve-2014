@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Xamarin University</title>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+	<script src="./res/js/script.js"></script>
+</head>
+
+<body>
+	<header>SQLite in Mobile Data</header>
+
+	<section id="main">
+
+		<h1>Exercise 3: Access a SQLite database with the SQLite.Net PCL</h1>
+
+		<h2>Duration</h2>
+		<p>20 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+
+		<h2 id="goals">Lab goals</h2>
+
+		<p>
+			The goal of this exercise is to leverage the SQLite.Net Portable Class Library (PCL) to define the database schema for a SQLite database using the SQLite ORM to connect to and communicate with the database.
+		</p>
+
+		<p>
+			You will continue to follow the pattern we started in Part 1, ensuring that platform-independent code is placed within the Portable Class Library (PCL) and platform-specific code is placed within each of the applications. The high-level steps to achieve this are outlined below.
+		</p>
+
+		<ol>
+			<li>
+				Add a class named <code>Person</code> to the <strong>People</strong> Portable Class Library (in the <code>People.Models</code> namespace), and define the table structure of a Person table using properties marked with attributes. The appropriate attributes will be added to this class which will identify the table and its columns.
+			</li>
+
+<p class="indent-none">
+<a href="#" onclick="toggleBlock(this, 'whatIsPCL', 'What is a Portable Class Library?', 'Hide'); return false;" class="uiitem">What is a Portable Class Library?</a>
+<div class="indent-none wsblock" id="whatIsPCL" style="display:none;">
+<div class="wsitem">
+<b>What is a Portable Class Library?</b>
+	<p class="indent-none">
+	A Portable Class Library (PCL) is a library that provides a set of APIs that are common among target platforms, enabling cross-platform code reuse. When developing an app that targets multiple platforms, it is best to place platform-independent code within a PCL, then add a reference to that library within each platform-specific app
+	(Android, iOS, and Windows Phone).</p>
+	<p class="indent-none">
+	Here is an <a href="http://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/introduction_to_portable_class_libraries/">Introduction to Portable Class Libraries (Xamarin)</a> as well as Microsoft's description of doing
+			<a href="http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx">Cross-Platform Development with the Portable Class Library (MSDN)</a>.
+	</p>
+</div>
+</div>
+</p>
+
+			<li>
+				Add a class named <code>PersonRepository</code> to the <strong>People</strong> Portable Class Library from the <strong>Assets</strong> folder, which will contain code to create and connect to a SQLite database using the SQLite.Net ORM, and perform basic CRUD operations against a single table.
+			</li>
+
+<p class="indent-none">
+<a href="#" onclick="toggleBlock(this, 'whatIsORM', 'What is an ORM?', 'Hide'); return false;" class="uiitem">What is an ORM?</a>
+<div class="indent-none wsblock" id="whatIsORM" style="display:none;">
+<div class="wsitem">
+<b>What is an ORM?</b>
+	<p class="indent-none">
+	An Object-Relational Mapper (ORM) simplifies defining and accessing a database schema through the use of attributes. Classes, along with their properties, are decorated with attributes to identify tables, columns, and constraints. This removes the need to write SQL queries to create tables, and perform CRUD operations against the database.</p>
+</div>
+</div>
+</p>
+
+<p class="indent-none">
+<a href="#" onclick="toggleBlock(this, 'whatIsSQLite', 'What is SQLite.Net?', 'Hide'); return false;" class="uiitem">What is an SQLite.Net?</a>
+<div class="indent-none wsblock" id="whatIsSQLite" style="display:none;">
+<div class="wsitem">
+<b>What is an SQLite.Net?</b>
+	<p class="indent-none">
+	SQLite.Net is a simple ORM designed to access SQLite in a cross-platform fashion. It is an <a href="https://github.com/praeclarum/sqlite-net">open source project located on Github</a> and supports Xamarin.iOS, Xamarin.Android and Windows Phone. It provides most of the attributes needed to define and access a database schema within your cross-platform solution.</p>
+	<p class="indent-none">
+	<a href="https://github.com/oysteinkrog/SQLite.Net-PCL">SQLite.Net PCL</a> is an open-source fork of SQLite-Net which is distributed as a PCL, this is the distribution we will utilize in this lab exercise.</p>
+	<p class="indent-none">
+	To learn more, refer to the <strong>SQLite-Net &dash; Cross-Platform ORM</strong> section within the Xamarin guide on
+	<a href="http://developer.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/part_5_-_practical_code_sharing_strategies/">Practical Code Sharing Strategies</a>.</p>
+</div>
+</div>
+</p>
+			<li>
+				Add a custom page (<code>MainPage.xaml</code>) which is in the <strong>Assets</strong> folder to allow the user to enter a new person, as well as view the list of people added to the database. We will use LINQ to query the database.
+			</li>
+
+<p class="indent-none">
+<a href="#" onclick="toggleBlock(this, 'whatIsLINQ', 'What is LINQ?', 'Hide'); return false;" class="uiitem">What is LINQ?</a>
+<div class="indent-none wsblock" id="whatIsLINQ" style="display:none;">
+<div class="wsitem">
+<b>What is LINQ?</b>
+	<p class="indent-none">
+	LINQ (or language-integrated query), is a component built-in to the .NET Framework libraries, that allows developers to perform queries on any data source
+	using a combination of extension methods, query operators, and lambda expressions. SQLite.Net PCL supports the use of LINQ to manage and query relational data using objects. Behind the scenes, the language-integrated queries are translated into SQL queries, which are then executed by the database. The results are
+	converted back into the objects that were defined by the application. </p>
+	<p class="indent-none">
+	To learn more about LINQ, refer to the article <a href="http://msdn.microsoft.com/en-us/library/bb308959.aspx">LINQ: .NET Language-Integrated Query (MSDN)</a>.</p>
+</div>
+</div>
+</p>
+	</ol>
+
+		<!-- - - - - - - - - OS and Environment - - - - - - - - -->
+
+		<h2>Development Environment Notes</h2>
+		<h3>Xamarin Studio on the Mac</h3>
+		<p>
+			Windows Phone is not a supported platform. Please work with the iOS and/or Android platforms only.
+		</p>
+		<h3>Visual Studio on Windows</h3>
+		<p>
+			Visual Studio 2013 Update 3, with the Windows Phone SDK, is required to follow along with the steps in the lab.
+			To verify whether or not the Windows Phone SDK is installed in your development environment, go to Control Panel >
+			Programs and Features. Select Microsoft Visual Studio 2013 in the list, and select the <strong>Change</strong> button.
+			In the Visual Studio installation dialog, select the <strong>Modify</strong> button. If the Windows Phone 8.0 SDK list item
+			does not contain a checkmark beside it, select it and click <strong>Update</strong> to install the SDK.
+			<img src="./res/images/Part1_VS_InstalledFeatures.png" alt="- - - - - - - - - MISSING IMAGE - - - - - - - - - -" />
+		</p>
+		<p>
+			iOS development will require a Mac to build and run. If you do not have a Mac available, please work
+			with the Android and/or Windows Phone platforms only.
+		</p>
+
+		<!-- - - - - - - - - Supplied resources - - - - - - - - -->
+
+		<h2>Required assets</h2>
+		<p>The provided <strong>Part 03 Resources</strong> folder contains a subfolder named <strong>Part03_Start</strong> which contains a solution you will use to perform this lab, or you can use the completed solution from the last exercise.</p>
+		<p>There is also an <strong>Assets</strong> folder which has some additional source files you will be adding to the project.</p>
+		<p>Finally, the <strong>Part 03 Resources</strong> folder also contains a subfolder named <strong>Part03_Completed</strong> which includes a solution you can use to check your work.</p>
+
+
+		<!-- - - - - - - - - Challenge - - - - - - - - -->
+
+      <h2>Exercise challenge</h2>
+      <p>
+      Follow the above <a href="#goals">goals</a> to complete the exercise. You can refer to the step-by-step instructions below to get more detailed information on each goal.
+      </p>
+
+      <div class="hintblock">
+         <strong>Tip:</strong> If you are doing this exercise live in a session, make sure to make good use of the instructor, they are online to answer any questions you have!
+      </div>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+
+		<h1>Steps</h1>
+
+		<p>
+			Below are the step-by-step instructions to implement the exercise.
+		</p>
+
+		<h2>Define a SQLite table using attributes</h2>
+		<ol>
+			<li>
+				Add a new folder to the <strong>People</strong> Portable Class Library, named <strong>Models</strong>.
+			</li>
+			<li>
+				Within the <strong>Models</strong> folder, add a class named <code>Person</code>, and ensure that it is public. Set the namespace of the <code>Person</code> class to <code>People.Models</code>.
+<p>
+<a href="#" onclick="toggleCode(this, 'modelsCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="modelsCode" style="display:none;">
+<pre class="prettyprint">
+namespace People.Models
+{
+    public class Person
+    {
+    }
+}
+</pre>
+</div>
+</p>
+			</li>
+			<li>
+				Add the following properties to the <code>Person</code> class:
+<pre class="prettyprint codeblock">
+public int Id {get; set;}
+public string Name {get; set;}
+</pre>
+			</li>
+			<li>
+				In the <code>Person</code> class, add a using directive for the <code>SQLite.Net.Attributes</code> namespace. This will allow you to use attributes to
+				define the table schema.
+			</li>
+			<li>
+				Mark the <code>Person</code> class with an attribute to identify it as a table, as pass in a table name to the attribute's constructor. This will be the name of the underlying SQLite table.
+<pre class="prettyprint codeblock">
+<span class="highlight">[Table("people")]</span>
+public class Person
+{
+   ...
+}
+</pre>
+			</li>
+			<li>
+				Mark the <code>Id</code> property with attributes to identify it as a Primary Key field and set it to autoincrement.
+
+<p class="indent-none">
+<a href="#" onclick="toggleCode(this, 'idColumnCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="idColumnCode" style="display:none;">
+<pre class="prettyprint">
+<span class="highlight">[PrimaryKey, AutoIncrement]</span>
+public int Id {get; set;}
+</pre>
+</div>
+</p>
+
+			</li>
+			<li>
+				Mark the <code>Name</code> property with attributes to limit the column to a max length of 250 characters, and ensure it takes unique values.
+<p class="indent-none">
+<a href="#" onclick="toggleCode(this, 'nameColumnCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="nameColumnCode" style="display:none;">
+<pre class="prettyprint">
+<span class="highlight">[MaxLength(250), Unique]</span>
+public string Name {get; set;}
+</pre>
+</div>
+</p>
+
+			</li>
+			<li>
+				Build the solution to verify your code will compile.
+			</li>
+		</ol>
+		<h2>Create and connect to a SQLite database</h2>
+		<ol>
+			<li>
+				Add the <code>PersonRepository</code> class file from the <strong>Assets</strong> folder, into your <strong>People</strong> Portable Class Library.
+			</li>
+			<li>
+				In the <code>PersonRepository</code> class file, add code to the constructor to initialize a new <code>SQLiteConnection</code>, using the
+				the platform and database path parameters that are passed into the constructor. Once the <code>SQLiteConnection</code> is initialized,
+				create a table in the database, using the <code>CreateTable</code> method.
+<p class="indent-none">
+<a href="#" onclick="toggleCode(this, 'initDbCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="initDbCode" style="display:none;">
+<pre class="prettyprint">
+public PersonRepository(ISQLitePlatform sqlitePlatform, string dbPath)
+{
+    if (dbConn == null)
+    {
+        dbConn = new SQLiteConnection(sqlitePlatform, dbPath);
+        dbConn.CreateTable&lt;Person&gt;();
+    }
+}
+</pre>
+</div>
+</p>
+			</li>
+			<li>
+				In the <code>PersonRepository</code> class file, add code to the <code>AddNewPerson</code> method to insert a new person, into the <code>Person</code> table.
+<p class="indent-none">
+<a href="#" onclick="toggleCode(this, 'insertCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="insertCode" style="display:none;">
+<pre class="prettyprint">
+public void AddNewPerson(string name)
+{
+    try
+    {
+        ...
+
+        result = dbConn.Insert(new Person { Name = name });
+        StatusMessage = string.Format("{0} record(s) added [Name: {1})", result, name);
+    }
+    ...
+}
+</pre>
+</div>
+</p>
+			</li>
+			<li>
+				In the <code>PersonRepository</code> class file, add code to the <code>GetAllPeople</code> method to retrieve the list of people that have added to the <code>Person</code> table.
+<p class="indent-none">
+<a href="#" onclick="toggleCode(this, 'getAllCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="getAllCode" style="display:none;">
+<pre class="prettyprint">
+public List&lt;Person> GetAllPeople()
+{
+    return dbConn.Table&lt;Person&gt;().ToList();
+}
+</pre>
+</div>
+</p>
+			</li>
+			<li>
+				Build the solution to verify your code will compile.
+			</li>
+		</ol>
+		<h2>Add a custom view to interact with the database</h2>
+		<ol>
+			<li>
+				In the <strong>People</strong> Portable Class Library, add the <code>MainPage.xaml</code> and <code>MainPage.xaml.cs</code> files from the <strong>Assets</strong> folder. These should automatically be related to each other by the IDE.
+			</li>
+			<div class="hintblock">
+				<strong>Note:</strong> Xamarin Studio sometimes doesn't show the relationship but it should still compile properly.
+			</div>
+			<li>
+				In the <strong>Properties</strong> window for the <code>MainPage.xaml</code> file, make sure the <strong>Build Action</strong> is set to <strong>Embedded Resource</strong>, without this, the XAML file will not be properly parsed. You can also either right-click on the .xaml file, or use the <em>gear</em> icon in Xamarin Studio to check the Build Action as shown below.
+			</li>
+			<img src="./res/images/embedded-res.png" />
+			<li>
+				In the <code>App.cs</code> file, add a public, static property for the <code>PersonRepository</code> object.
+<pre class="prettyprint codeblock">
+public static PersonRepository PersonRepo { get; private set; }
+</pre>
+			</li>
+			<li>
+				Add a using directive for the <code>SQLite.Net.Interop</code> namespace within the <code>App.cs</code> file. Next, modify the
+				<code>GetMainPage</code> method to accept an <code>ISQLitePlatform</code> parameter and a string parameter. Initialize the <code>PersonRepo</code>
+				property, passing in the <code>ISQLitePlatform</code> and string parameters to its constructor, and return a new instance of <code>MainPage</code>.
+
+<p class="indent-none">
+<a href="#" onclick="toggleCode(this, 'getMainPageCode'); return false;" class="uiitem">Show Code</a>
+<div class="indent-none" id="getMainPageCode" style="display:none;">
+<pre class="prettyprint">
+public static Page GetMainPage(ISQLitePlatform sqlitePlatform, string dbPath)
+{
+    //set database path first, then retrieve main page
+    PersonRepo = new PersonRepository(sqlitePlatform, dbPath);
+
+    return new MainPage();
+}
+</pre>
+</div>
+</p>
+			</li>
+		</ol>
+		<h2>Add the SQLite.Net PCL Platform-Specific Implementations</h2>
+		<ol>
+
+			<li>
+				In each of the platform-specific projects, add the using directive for the respective platform. Then, modify the call
+				to <code>GetMainPage</code> to pass in the SQLite platform implementation and the database path.
+<p class="indent-none">
+<div>
+<a href="#" onclick="toggleBlock(this, 'androidMainCode', 'Android', 'Hide'); return false;" class="uiitem">Android</a>
+<div class="indent-none" id="androidMainCode" style="display:none;">
+<pre class="prettyprint">
+using SQLite.Net.Platform.XamarinAndroid;
+
+public class MainActivity : AndroidActivity
+{
+    protected override void OnCreate(Bundle bundle)
+    {
+        base.OnCreate(bundle);
+
+        Xamarin.Forms.Forms.Init(this, bundle);
+
+        string dbPath = FileAccessHelper.GetLocalFilePath("people.db3");
+        SetPage(App.GetMainPage(<span class="highlight">new SQLitePlatformAndroid()</span>, dbPath));
+    }
+}
+</pre>
+</div>
+
+<a href="#" onclick="toggleBlock(this, 'iosMainCode', 'iOS', 'Hide'); return false;" class="uiitem">iOS</a>
+<div class="indent-none" id="iosMainCode" style="display:none;">
+<pre class="prettyprint">
+using SQLite.Net.Platform.XamarinIOS;
+...
+
+public partial class AppDelegate : UIApplicationDelegate
+{
+    ...
+
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        Forms.Init();
+
+        window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+        string dbPath = FileAccessHelper.GetLocalFilePath("people.db3");
+        window.RootViewController = App.GetMainPage(<span class="highlight">new SQLitePlatformIOS()</span>, dbPath).CreateViewController();
+
+        window.MakeKeyAndVisible();
+
+        return true;
+    }
+}
+</pre>
+</div>
+
+<a href="#" onclick="toggleBlock(this, 'winphoneMainCode', 'Windows Phone', 'Hide'); return false;" class="uiitem">Windows Phone</a>
+<div class="indent-none" id="winphoneMainCode" style="display:none;">
+<pre class="prettyprint">
+using SQLite.Net.Platform.WindowsPhone8;
+
+public partial class MainPage : PhoneApplicationPage
+{
+    public MainPage()
+    {
+        InitializeComponent();
+
+        Forms.Init();
+
+        string dbPath = FileAccessHelper.GetLocalFilePath("people.db3");
+        Content = People.App.GetMainPage(<span class="highlight">new SQLitePlatformWP8()</span>, dbPath).ConvertPageToUIElement(this);
+    }
+
+}
+</pre>
+</div>
+</div>
+</p>
+			</li>
+			<li>
+				Build the solution and run the application on each platform you are supporting in your solution.
+			</li>
+		</ol>
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+
+		<h1>Summary</h1>
+		<p>
+		In this lab, you implemented a common cross-platform pattern separating out the platform-dependent code into platform-specific projects, created &amp; connected to a SQLite database, performed basic CRUD operations against the database using a custom view.
+		</p>
+
+		<br />
+		<br />
+
+		<div class="align-right">
+         <a href="javascript:history.back()">Back</a>
+		</div>
+	</section>
+
+	<footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

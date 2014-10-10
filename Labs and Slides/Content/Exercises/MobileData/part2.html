@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Xamarin University</title>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+	<script src="./res/js/script.js"></script>
+</head>
+
+<body>
+	<header>SQLite in Mobile Data</header>
+
+	<section id="main">
+
+		<h1>Exercise 2: Adding SQLite.Net to your projects</h1>
+
+		<h2>Duration</h2>
+		<p>10 minutes</p>
+
+		<!-- - - - - - - - - Goals - - - - - - - - -->
+
+		<h2 id="goals">Lab goals</h2>
+
+		<p>
+			The goal of this exercise is to configure your development environment so that you
+			can use SQLite within your Android, iOS, and Windows Phone projects. The high level steps to perform this
+			in both Xamarin Studio and Visual Studio are listed below.
+		</p>
+
+		<ol>
+			<li><strong>Windows Phone only:</strong> Install the SQLite for Windows Phone Extension.
+			<li>Add the platform-independent SQLite.Net PCL to the People Portable Class Library.</li>
+			<li>Add the platform-specific implementation of the SQLite.Net PCL to each platform-specific project.</li>
+		</ol>
+
+<p>
+<a href="#" onclick="toggleBlock(this, 'nuget', 'What is NuGet?', 'Hide'); return false;" class="uiitem">What is NuGet?</a>
+<div class="wsblock" id="nuget" style="display:none;">
+<div class="wsitem">
+	<b>What is NuGet?</b>
+	<br />
+	NuGet allows developers to easily download, install, update, and remove
+	3<sup>rd</sup>-party libraries within a Visual Studio project. These libraries are made available through the <a href="http://www.nuget.org">NuGet Gallery</a>, which is an online repository managed by Microsoft. NuGet was created by Microsoft and is available in Visual Studio through the <a href="http://docs.nuget.org/docs/start-here/installing-nuget">NuGet Package Manager</a> which is built into Visual Studio. As of Xamarin 3, NuGet has become fully integrated into the Xamarin IDE as well and is fully compatible with Visual Studio.
+	To learn more about how to use NuGet in Xamarin Studio, check out the blog post, <a href="http://blog.xamarin.com/xamarin-studio-and-nuget/">Xamarin Studio and NuGet</a>.
+</div>
+</div>
+</p>
+
+		<!-- - - - - - - - - OS and Environment - - - - - - - - -->
+
+		<h2 id="devEnv">Development Environment Notes</h2>
+		<h3>Xamarin Studio on the Mac</h3>
+		<p>
+			Windows Phone is not a supported platform. Please work with the iOS and/or Android platforms only.
+		</p>
+		<h3>Visual Studio on Windows</h3>
+		<p>
+			Visual Studio 2013 Update 3, with the Windows Phone SDK, is required to follow along with the steps in the lab.
+			To verify whether or not the Windows Phone SDK is installed in your development environment, go to Control Panel >
+			Programs and Features. Select Microsoft Visual Studio 2013 in the list, and select the <strong>Change</strong> button.
+			In the Visual Studio installation dialog, select the <strong>Modify</strong> button. If the Windows Phone 8.0 SDK list item
+			does not contain a checkmark beside it, select it and click <strong>Update</strong> to install the SDK.
+			<img src="./res/images/Part1_VS_InstalledFeatures.png" alt="- - - - - - - - - MISSING IMAGE - - - - - - - - - -" />
+		</p>
+		<p>
+			iOS development will require a Mac to build and run. If you do not have a Mac available, please work
+			with the Android and/or Windows Phone platforms only.
+		</p>
+
+		<!-- - - - - - - - - Supplied resources - - - - - - - - -->
+
+		<h2>Required assets</h2>
+		<p>
+			The <strong>Part 02 Resources</strong> folder contains a subfolder named <strong>Part02_Start</strong> which contains a solution you will use to perform this lab. Alternatively, you can use the completed solution from the last exercise. The resources folder also contains a completed solution named <strong>Part02_Completed</strong> you can examine to check your work. Please make sure you have these folders before you begin.
+		</p>
+
+		<!-- - - - - - - - - Challenge - - - - - - - - -->
+
+      <h2>Exercise challenge</h2>
+      <p>
+      Follow the above <a href="#goals">goals</a> to complete the exercise. You can refer to the step-by-step instructions below to get more detailed information on each goal.
+      </p>
+
+
+		<div class="hintblock">
+			<strong>Tip:</strong> If you are doing this exercise live in a session, make sure to make good use of the instructor, they are online to answer any questions you have!
+		</div>
+
+		<!-- - - - - - - - - Steps - - - - - - - - -->
+
+		<h1>Steps</h1>
+
+		<p>
+			Below are the step-by-step instructions to implement the exercise.
+		</p>
+
+		<h2>Install the SQLite for Windows Phone Extension</h2>
+		<p>
+			Since SQLite is not available by default on Windows, an extra step is required in Visual Studio to install the
+			necessary SQLite native library on your Windows machine, which will in turn allow you to easily package SQLite
+			with your Windows Phone apps. The SQLite for Windows Phone extension only needs to be downloaded and installed
+			once per machine (not per project); however, you must always remember to include the SQLite extension as a
+			reference within your Windows Phone projects.
+		</p>
+
+		<ol>
+			<li>
+				Launch Visual Studio, then select <strong>Tools > Extensions and Updates...</strong></li>
+			<li>
+				In the Extensions and Updates dialog, select the <strong>Online > Visual Studio Gallery</strong> node.
+				Type <strong>sqlite</strong> within the search field and hit the Enter key.
+			</li>
+			<li>
+				Locate the <strong>SQLite for Windows Phone</strong> extension within the search results and click Download.
+				<div class="hintblock">
+					<strong>Tip:</strong> If the SQLite for Windows Phone extension is not being returned within the search results, verify that your <a href="#devEnv">Visual Studio development environment</a> is configured properly. If you are still unable to retrieve the extension in the Extensions and Updates search results, use Google Chrome or Mozilla Firefox to download the <strong>sqlite-wp80-winrt-3080600.vsix</strong> extension from the <a href="http://www.sqlite.org/download.html">SQLite Download page</a>. Do not use Internet Explorer, as it will download the file as a ZIP. Once the VSIX file is downloaded, double-click on it to launch the installation.
+				</div>
+				This action will launch the VSIX Installer which displays the license terms, and indicates the extension
+				will be installed to a Global Location. Click Install to continue. Restart Visual Studio when prompted.
+				<img src="./res/images/Part2_VS_InstallSQLiteExtension.png" alt="- - - - - - - - - MISSING IMAGE - - - - - - - - - -" />
+			</li>
+			<li>
+				Once Visual Studio has restarted, open the <strong>People</strong> solution contained within the <strong>Part02_Start</strong> folder.
+			</li>
+			<li>
+				Right-click the References node within the Windows Phone project and select <strong>Add Reference...</strong>
+				Click on the <strong>Windows Phone SDK > Extensions</strong> node, and select the SQLite for Windows Phone extension to add it
+				to the project. This will add the native SQLite library (sqlite3.dll) to the project.
+
+			</li>
+			<li>
+				Select <strong>Build | Configuration Manager...</strong> from the menu. In the Build Configuration Manager dialog,
+				select x86 or ARM as the target platform of your Windows Phone project, in order to be able to build your project
+				with SQLite.
+				<br/>
+				<strong>Note:</strong> Use x86 when testing the Windows Phone project in the Emulator, and ARM when testing on the actual device.
+			</li>
+			<li>
+				Build your solution to verify it will compile.
+			</li>
+		</ol>
+		<h2>Add the platform-independent SQLite.Net PCL to the People Portable Class Library.</h2>
+		<ol>
+			<li>
+				If you are using Xamarin Studio, right-click the <strong>Packages</strong> folder in the <strong>People</strong> Portable Class Library project and select
+				<strong>Add Packages...</strong> from the popup menu. In the Search field, enter <code>sqlite.net pcl</code>.
+				Select the SQLite.Net component in the list, and add it to the project.
+				<img src="./res/images/Part2_XS_AddPackages.png" alt="- - - - - - - - - MISSING IMAGE - - - - - - - - - -" />
+
+				If you are using Visual Studio, right-click on the <strong>People</strong> Portable Class Library project name within Solution Explorer,
+				select <strong>Manage Nuget Packages...</strong>, and select the Online node. Enter <code>sqlite.net pcl</code>
+				in the Search field. Select the SQLite.Net package in the list and install. Ensure you select the proper SQLite.Net
+				package, and not the one marked as Prerelease as shown below.
+				<img src="./res/images/Part2_VS_ManageNugetPkg.png" alt="- - - - - - - - - MISSING IMAGE - - - - - - - - - -" />
+			</li>
+		</ol>
+		<h2>Add the platform-specific implementation of the SQLite.Net PCL to each platform-specific project.</h2>
+		<ol>
+			<li>
+				<strong>Android</strong>: Use the same steps as above to launch Nuget Package Manager for your Android project.
+				Enter <strong>sqlite-net android</strong> in the search field. In the search results, select the
+				<strong>SQLite.Net PCL - XamarinAndroid Platform</strong> Nuget package and click Install.
+				Once the Nuget package has installed successfully, close the Nuget Package Manager dialog.
+
+			</li>
+			<li>
+				<strong>iOS</strong>: Use the same steps as above to launch Nuget Package Manager for your Android project.
+				Enter <strong>sqlite-net ios</strong> in the search field. In the search results, select the
+				<strong>SQLite.Net PCL - XamarinIOS Platform</strong> Nuget package and click Install.
+				Once the Nuget package has installed successfully, close the Nuget Package Manager dialog.
+
+			</li>
+			<li>
+				<strong>Windows Phone</strong>: In Visual Studio, right-click on the People.WinPhone project,
+				and perform the same steps as above to launch the Nuget Package Manager.
+				Type in <strong>sqlite-net wp8</strong> in the search field, and hit Enter.
+				In the search results, select the <strong>SQLite.Net PCL - WindowsPhone8 Platform</strong> Nuget package and click Install.
+				Once the Nuget package has installed successfully, close the Nuget Package Manager dialog.
+
+			</li>
+		</ol>
+
+		<!-- - - - - - - - - Summary - - - - - - - - -->
+
+		<h1>Summary</h1>
+		<p>
+		In this lab, you installed the SQLite for Windows Phone extension on your Windows machine, and added it as a reference to your Windows Phone project.
+		You also used Nuget Package Manager to install the platform-independent SQLite.NET PCL to a Xamarin.Forms Portable Class Library, as well as
+		the platform-specific SQLite.NET implementations to your Android, iOS, and Windows Phone projects.
+		</p>
+
+		<br />
+		<br />
+
+		<div class="align-right">
+         <a href="javascript:history.back()">Back</a>
+		</div>
+	</section>
+
+	<footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

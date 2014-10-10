@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:text="@string/getRandomMonkey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/getRandomMonkeyButton" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/randomMonkeyLabel"
+        android:gravity="center" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp">
+        <EditText
+            android:id="@+id/familyText"
+            android:hint="Family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/subfamilyText"
+            android:layout_alignBottom="@+id/subfamilyText"
+            android:layout_alignParentLeft="true" />
+        <EditText
+            android:id="@+id/subfamilyText"
+            android:hint="Subfamily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/genusText"
+            android:layout_alignBottom="@+id/genusText" />
+        <EditText
+            android:id="@+id/genusText"
+            android:hint="Genus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/searchButton"
+            android:layout_alignBottom="@+id/searchButton" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_search"
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/searchResultsList" />
+</LinearLayout>

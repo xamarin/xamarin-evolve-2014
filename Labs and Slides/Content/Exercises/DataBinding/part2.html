@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>Data Binding in Xamarin.Forms</header>
+    <section id="main">
+
+      <h1>Exercise 2: Working with Two-Way Bindings</h1>
+      <h2>Duration</h2>
+      <p>15 minutes</p>
+
+      <h2>Goals</h2>
+      <p>
+      This exercise will continue modifying our contact details page and examine the built-in two-way binding support in Xamarin.Forms. You will attempt to modify the data in the code behind and get the changes to reflect properly in the UI by implementing the <code>INotifyPropertyChanged</code> interface.
+      </p>
+
+      <h2>Assets</h2>
+      <p>
+      This exercise includes a starter project in the <strong>Part 02 Resources</strong> folder. You can either use this starter project, or continue from the prior exercise.</p>
+
+      <h2>Challenge</h2>
+      <p>
+      This exercise shows how to use the <code>Binding.Mode</code> property by explicitely setting it to <code>TwoWay</code> for our editable bindings. It then adds some code to modify the Homer object in code behind independent of the UI to show that it does not work without one extra step: <code>INotifyPropertyChanged</code>.
+      </p>
+
+      <p>Here are the basic steps you will go through:</p>
+      <ol class="indent-large">
+        <li>Open the starter solution (or continue from exercise 1).</li>
+        <li>Set the <code>Binding.Mode</code> property on each of our bindings so we explicitly request two-way bindings for updates.</li>
+        <li>Add some code to modify the <code>Dob</code> property when you use the <strong>Show</strong> button. Remember that the <code>DateTime</code> is immutable - you will need to assign a new <code>DateTime</code> to the <code>Dob</code> property each time, make some change such as add a year. It should properly display in the alert dialog, but will not change the UI.</li>
+        <li>Finally, add in support for true two-way bindings using the <code>INotifyPropertyChanged</code> interface so we can update either the UI or the code-behind object and see changes occur.</li>
+      </ol>
+
+      <p>
+      If you have worked with data binding on other platforms, then feel free to experiment with this lab - read the above steps and try to complete the exercise without going through the step-by-step detail below.
+      </p>
+      <p>
+      If data binding is new to you, or you need some guidance, then use the following steps as you go through the lab to get more detailed information on using the binding infrastructure.
+      </p>
+
+      <h1>Steps</h1>
+      <h2>Open the starter solution</h2>
+      <p>
+        You can either continue from the prior exercise if you completed all the bindings, or open the supplied starter solution in the <strong>Part 02 Resources</strong> folder. Go ahead and build the application to make sure it's all working before you start modifying it.
+      </p>
+
+    <h2>Add in support for two-way bindings</h2>
+      <p>
+        As you saw in the last exercise, we are able to update the UI and see the changes reflected in the underlying <code>Person</code> object the bindings are connected to. However, on some XAML platforms, this would not be automatically happening - we would have to be very specific about which properties we want to update when the UI changes by setting the <code>Binding.Mode</code>. In this part, we will set the binding mode on each of our bindings, just to be explicit - and to be certain the binding does what we want.
+      </p>
+
+      <ol>
+        <li>Open the <strong>ContactDetails.xaml</strong> markup file and on each <code>{Binding}</code> you created earlier, set the <code>Mode</code> to be &quot;TwoWay&quot;. Remember you won't use quotes in the markup extension properties!
+      </ol>
+<p><a href="#" onclick="toggleCode(this,'xamBinding3');return false;" class="uiitem">Show Code</a><div class="indent-large" id="xamBinding3" style="display:none;">
+<pre class="prettyprint">
+&lt;Image x:Name="headshot" HeightRequest="200" Aspect="AspectFit" />
+
+&lt;Label Text="Name" Font="Bold" />
+&lt;Entry x:Name="nameEntry" Text="{Binding Name<span class="highlight">, Mode=TwoWay</span>}" />
+
+&lt;Label Text="Email" Font="Bold" />
+&lt;Entry x:Name="emailEntry" Text="{Binding Email<span class="highlight">, Mode=TwoWay</span>}" />
+
+&lt;Label Text="Gender" Font="Bold" />
+&lt;Picker x:Name="genderPicker">
+  &lt;Picker.Items>
+    &lt;x:String>Male&lt;/x:String>
+    &lt;x:String>Female&lt;/x:String>
+  &lt;/Picker.Items>
+&lt;/Picker>
+
+&lt;Label Text="Birthday" Font="Bold" />
+&lt;DatePicker x:Name="birthday" Date="{Binding Dob<span class="highlight">, Mode=TwoWay</span>}" />
+
+&lt;Label Text="Favorite" Font="Bold" />
+&lt;Switch x:Name="favoriteSwitch" IsToggled="{Binding IsFavorite<span class="highlight">, Mode=TwoWay</span>}"/>
+</pre>
+      </div></p>
+
+      <h2>Add support for source property changes</h2>
+      <p>
+      In this final part, we will see why we need <code>INotifyPropertyChanged</code>, and then implement it on our <code>Person</code> object.
+      </p>
+      <ol>
+        <li>Open the <strong>ContactDetails.xaml.cs</strong> code behind file and locate the <code>OnShow</code> method at the bottom. We want to modify our <code>Person</code> object in some way that is independent of the UI.</li>
+        <li>Add a year to the <code>Person.Dob</code> property by calling <code>.AddYear(1)</code> and assigning the returning value back to the <code>Dob</code> property. <em>Note: you must assign the property since <code>DateTime</code> is immutable.</em>.</li>
+      </ol>
+<p><a href="#" onclick="toggleCode(this,'inpc1');return false;" class="uiitem">Show Code</a><div class="indent-large" id="inpc1" style="display:none;">
+<pre class="prettyprint">
+void OnShow(object sender, EventArgs e)
+{
+  <span class="highlight">person.Dob = person.Dob.AddYears(1);</span>
+  this.DisplayAlert("Selected Contact", person.ToString(), "OK");
+}
+</pre>
+      </div></p>
+      <ol start="3">
+        <li>Run the application and take note of the current birthday, then hit the <strong>Show</strong> button in the Tool bar. It should display the person but the year should be incremented in the alert dialog. Again, take note of the year displayed here.</li>
+        <li>Dismiss the alert dialog and notice the UI is still displaying the <em>original</em> year. You can repeat this step and even add in a breakpoint to make sure the year is actually changing in our underlying model.</li>
+        <div class="hintblock">The problem is that Xamarin.Forms is unaware of the property being changed - to make it aware, we need to implement the <code>INotifyPropertyChanged</code> interface on the <code>Person</code> class.</div>
+        <li>Open the <strong>SimpsonFactory.cs</strong> source file and locate the <code>Person</code> class definition.</li>
+        <li>Modify the class to implement <code>INotifyPropertyChanged</code>.</li>
+        <div class="hintblock">
+          <strong>Hint:</strong> If you add the interface definition to the class, you can place your cursor on it and use ALT+ENTER (VS) or CMD+ENTER (XS) to get the IDE to provide a dummy implementation for you.
+        </div>
+        <li>You need to change the existing <code>Dob</code> auto-property into a field-backed property and when it is changed, raise the <code>PropertyChanged</code> event. Go ahead and add that code, here's some hints:
+          <ul class="indent-none">
+            <li>Make sure to compare the two values - it's inefficient to raise a property change notification if the value has not actually changed.</li>
+            <li>If the value <em>has</em> changed, then you need to raise the event (make sure to test for null!), passing the current object as the <code>sender</code> and a new <code>PropertyChangedEventArgs</code> with the text name of the property that has changed - in this case, that would be &quot;Dob&quot;</li>
+            <li>.NET 4.5 includes an attribute <code>CallerMemberNameAttribute</code> which you can use to identify the property that has been changed. Check the below code for an example of using this attribute.</li>
+            <li>To avoid a <code>null</code> check on the event, you can use the <em>Null Pattern</em> and assign the <code>PropertyChanged</code> delegate to an empty delegate body - this is thread-safe and removes the need to test the event before invoking it.</li>
+          </ul>
+        </li>
+      </ol>
+<p><a href="#" onclick="toggleCode(this,'inpc2');return false;" class="uiitem">Show Code</a><div class="indent-large" id="inpc2" style="display:none;">
+<pre class="prettyprint">
+public class Person <span class="highlight">: INotifyPropertyChanged</span>
+{
+  <span class="highlight">public event PropertyChangedEventHandler PropertyChanged = delegate {};</span>
+
+  public string Name { get; set; }
+  public string HeadshotUrl { get; set; }
+  public string Email { get; set; }
+
+  <span class="highlight">DateTime dob;
+  public DateTime Dob {
+    get {
+      return dob;
+    }
+    set {
+      if (dob != value) {
+        dob = value;
+        // Can pass the property name as a string,
+        // -or- let the compiler do it because of the
+        // CallerMemberNameAttribute below.
+        RaisePropertyChanged();
+      }
+    }
+  }</span>
+
+  public Gender Gender { get; set; }
+  public bool IsFavorite { get; set; }
+
+  <span class="highlight">void RaisePropertyChanged([CallerMemberName] string propertyName = "")
+  {
+    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+  }</span>
+
+  public override string ToString()
+  {
+    return string.Format("Name={0}, Email={1}, Dob={2}, Gender={3}, IsFavorite={4}",
+            this.Name, this.Email, this.Dob, this.Gender, this.IsFavorite);
+  }
+}
+</pre>
+      </div></p>
+
+      <ol start="8">
+        <li>Run the application, scroll down to the Birthday <code>DatePicker</code> and hit the <strong>Show</strong> button again - now you should see the date changing when it's changed in the underlying <code>Person</code> object.</li>
+        <li>You can fix the other properties if you like - we aren't actually changing any of them, but they would all need to raise the <code>PropertyChanged</code> notification to properly notify the UI in a production application.</li>
+        <li>You can also remove the <code>x:Name</code> attributes off all the XAML objects you are now binding - this removes the private field mapped to the control and reduces the intellisense clutter with unused objects.</li>
+      </ol>
+
+    <h1>Summary</h1>
+    <p>
+    In this exercise, you have taken an existing Xamarin.Forms application and modified it to use Data Binding to populate the UI. You have successfully added two-way binding and implemented the <code>INotifyPropertyChanged</code> interface on your model object.
+    </p>
+    <p>
+    There is a completed version of the lab exercise in the resources folder.</p>
+
+    <div class="align-right">
+        <a href="javascript:history.back()">Back</a>
+    </div>
+
+  </section>
+  <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

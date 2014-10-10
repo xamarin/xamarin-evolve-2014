@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DC0620D-BE8B-40B4-A27F-71CB9CFF49F6}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>com.xamarin.university.mobilenav.android.stack</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AssemblyName>AndroidStack</AssemblyName>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <AndroidSupportedAbis>armeabi-v7a,x86</AndroidSupportedAbis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Json" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.20.0.0.4\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MenuActivity.cs" />
+    <Compile Include="AboutActivity.cs" />
+    <Compile Include="SessionActivity.cs" />
+    <Compile Include="SessionsActivity.cs" />
+    <Compile Include="SessionsAdapter.cs" />
+    <Compile Include="SpeakersActivity.cs" />
+    <Compile Include="SpeakersAdapter.cs" />
+    <Compile Include="SpeakerListFragment.cs" />
+    <Compile Include="SpeakerDetailActivity.cs" />
+    <Compile Include="SpeakerDetailsFragment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_my_schedule_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_my_schedule_unselected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_sessions_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_sessions_unselected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_speakers_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_speakers_unselected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_whats_on_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_whats_on_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_my_schedule_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_my_schedule_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_sessions_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_sessions_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_speakers_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_speakers_unselected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_whats_on_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_whats_on_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_my_schedule_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_my_schedule_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_sessions_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_sessions_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_speakers_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_speakers_unselected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_whats_on_selected.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_whats_on_unselected.png" />
+    <AndroidResource Include="Resources\drawable\ic_launcher.png" />
+    <AndroidResource Include="Resources\layout\speaker_row.axml" />
+    <AndroidResource Include="Resources\layout\speaker_screen.axml" />
+    <AndroidResource Include="Resources\layout\session_screen.axml" />
+    <AndroidResource Include="Resources\layout\about.axml" />
+    <AndroidResource Include="Resources\layout\speakers_screen.axml" />
+    <AndroidResource Include="Resources\layout-land\speakers_screen.axml" />
+    <AndroidResource Include="Resources\drawable\ic_action_sessions.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_speakers.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_whats_on.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Assets\images\" />
+    <Folder Include="Assets\images\speakers\" />
+    <Folder Include="Resources\layout-land\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\speakers\aaron.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\ananth.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\bob.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\chris.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\dean.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\demis.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\don.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\frank.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\greg.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\igor.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\jb.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\jeremie.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\john_bubriski.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\john_zablocki.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\jonathan.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\louis.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\michael.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\miguel.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\paul.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\phil.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\sam.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\scott.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\somya.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\steve.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\david.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\dave.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\jared.jpg" />
+    <AndroidAsset Include="Assets\images\speakers\jeroen.jpg" />
+    <AndroidAsset Include="Assets\about.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evolve.Core\Evolve.Core.csproj">
+      <Project>{63D03C6F-26F7-4213-A7A4-49C7C4DB501F}</Project>
+      <Name>Evolve.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

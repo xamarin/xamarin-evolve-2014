@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>XTC 101 - Introduction to Testing</header>
+
+    <section id="main">
+
+        <h1>Exercise 1: Creating Unit Tests</h1>
+        <h2>Estimated Time: 20 minutes</h2>
+
+        <h2>Goals</h2>
+        <p>
+        The primary goal of this exercise will be to ensure that you can successfully create, run and debug unit tests.
+        </p>
+
+        <h1>Steps</h1>
+        <p>
+        Open the starter solution
+        </p>
+        <h2>Open the Starter Solution</h2>
+        <ol>
+            <li>Open the solution found in <strong>Content/Exercises/IntroTesting/Part01 Resourfces/Part1.Start</strong> in Xamarin Studio.</li>
+
+            <li>Right-click on solution folder called <b>Unit Test</b>, select Add and then Add New Project</li>
+
+            <li>Select C#, then NUnit, then select the NUnit Library Project template and name your project Phoneword.UnitTests.Core</li>
+            <li>Double click on the unit test project to bring up the project options. Select the Build node, then change the Target Framework to Mono / .NET 4.5, then click OK</li>
+            <li>Right click on the References for the Unit Test Project and add a reference to the Phoneword.Core project</li>
+
+            <li>Right click on the Test.cs file and select Rename. Rename the file to TestTranslation.cs</li>
+            <li>Add <code>using Phoneword.Core;</code> to the files namespace references.</li>
+
+            <li>Rename the TestCase method to PhoneTranslation_CalculateTranslation_CheckIsAccurate</li>
+            <li>Change the <code>PhoneTranslation_CalculateTranslation_CheckIsAccurate</code> method to the following</li>
+             <p><a href="#" onclick="toggleCode(this,'defaultCheck');return false;" class="uiitem">Show Code</a>
+            	<div class="indent-large" id="defaultCheck" style="display:none;">
+<pre class="prettyprint">
+[Test]
+public void PhoneTranslation_CalculateTranslation_CheckIsAccurate ()
+{
+	var originalNumber = "1-855-XAMARIN";
+	var expectedValue = "1-855-9262746";
+
+	var translatedNumber = PhonewordTranslator.ToNumber (originalNumber);
+	Assert.AreEqual (expectedValue, translatedNumber, "The expected phone numbers are not equivilent");
+}
+
+</pre>
+				</div>
+			</p>
+
+			<li>Create a new Unit Test by right-clicking on the project and then select Add, then Add New and from the NUnit template select Text Fixture.</li>
+            <li>Add <code>using Phoneword.Core;</code> to the files namespace references.</li>
+            <li>Name the file <code>TestPhoneTranslateViewModel</code> and change its code to the following:</li>
+             <p><a href="#" onclick="toggleCode(this,'viewModelTesting');return false;" class="uiitem">Show Code</a>
+            	<div class="indent-large" id="viewModelTesting" style="display:none;">
+<pre class="prettyprint">
+
+	[TestFixture]
+	public class TestPhoneTranslateViewModel
+	{
+		MainViewModel _appViewModel;
+		PhoneTranslateViewModel _translateViewModel;
+
+		public class TestDialer : IDialer
+		{
+			public bool Dial (string number)
+			{
+				Console.WriteLine (string.Format ("Dialing {0}", number));
+				return true;
+			}
+		}
+
+		[SetUp]
+		public void Setup()
+		{
+			_appViewModel = new MainViewModel (new TestDialer ());
+			_translateViewModel = new PhoneTranslateViewModel (_appViewModel);
+		}
+
+		[Test]
+		public void PhoneTranslateViewModel_TestTranslate_NotEnabledWhenNoPhoneNumber ()
+		{
+			_translateViewModel.PhoneNumberText = "";
+			Assert.AreEqual (_translateViewModel.TranslateCommand.CanExecute (null), false);
+		}
+
+		[Test]
+		public void PhoneTranslateViewModel_TestTranslate_EnabledWhenPhoneNumberSupplied ()
+		{
+			_translateViewModel.PhoneNumberText = "1-855-XAMARIN";
+			Assert.AreEqual (_translateViewModel.TranslateCommand.CanExecute (null), true);
+		}
+
+		[Test]
+		public void PhoneTranslateViewModel_TestTranslate_TranslateAndCallSuccess ()
+		{
+			_appViewModel.DialledNumbers.Clear ();
+			_translateViewModel.PhoneNumberText = "1-855-XAMARIN";
+
+			Assert.AreEqual (_translateViewModel.TranslateCommand.CanExecute (null), true,
+				"The option to Transalte is not available");
+
+			_translateViewModel.TranslateCommand.Execute (null);
+
+			Assert.AreEqual (_translateViewModel.TranslatedNumber, "1-855-9262746",
+				"The phone number did not translate as expected");
+
+			_translateViewModel.CallCommand.Execute (null);
+
+			Assert.IsTrue (_appViewModel.DialledNumbers.Count == 1 &&
+				_appViewModel.DialledNumbers[0] == "1-855-9262746");
+		}
+	}
+</pre>
+				</div>
+			</p>
+			<li>Open the Unit Test pad by selecting from the Main Menu View, Pads and then select Unit Tests</li>
+			<li>Select the Run All option from the Unit Test tab to see the results of the Unit Tests</li>
+            <li>Close the Solution</li>
+        </ol>
+
+        <h1>Summary</h1>
+        <p>
+        Congratulations, you have successfully run and created unit tests on your platform.
+        </p>
+
+        <div class="align-right">
+            <a href="javascript:history.back()">Back</a>
+        </div>
+    </section>
+
+    <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

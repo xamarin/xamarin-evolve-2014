@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+  <header>XAML in Xamarin.Forms</header>
+  <section id="main">
+
+    <h1>Exercise 2: Adding Behavior to XAML Calculator</h1>
+    <h2>Duration</h2>
+    <p>15 minutes</p>
+
+    <h2>Goals</h2>
+    <p>
+    This exercise will continue modifying our <b>Calculator</b> application and hook up the behavior to the XAML-generated UI by giving names to the some elements and wiring events up to others.
+    </p>
+
+    <h2>Assets</h2>
+    <p>
+    This exercise includes a starter project in the <strong>Content/Exercises/XAML/Part 02 Resources</strong> folder. You can either use this project, or just continue from the prior exercise if you worked on Part 1.
+    </p>
+
+    <h2>Challenge</h2>
+    <p>
+    This exercise takes our existing <b>Calculator</b> application with the UI created in XAML and provides the behavior so it functions properly as a calculator by moving the original implementation from the previous code-based <code>OldMainPage</code> class.
+    </p>
+
+    <p>Here are the basic steps you will go through:</p>
+    <ol class="indent-large">
+      <li>Copy the logic from the <code>OldMainPage</code> class into the <code>MainPage</code> code behind file.</li>
+      <li>Add a name to the <code>Label</code>.</li>
+      <li>Set event handlers on all the <code>Button</code> elements.</li>
+    </ol>
+    <p>This is a fairly easy exercise which you can likely do without any direct instructions, but feel free to walk through the steps below if you prefer.</p>
+
+    <h1>Steps</h1>
+
+    <h2>Copy the Logic from the OldMainPage</h2>
+    <p>
+      Let's move the original calculator logic from the original source file we used that also created the UI in code. You renamed this to <code>OldMainPage</code> in the prior exercise.
+    </p>
+    <ol>
+      <li>Open the <strong>OldMainPage.cs</strong> file.</li>
+      <li>Copy the following fields from that file into your <strong>MainPage.xaml.cs</strong> code behind file:
+        <ul>
+          <li><code>currentState</code></li>
+          <li><code>mathOperation</code></li>
+          <li><code>firstNumber</code></li>
+          <li><code>secondNumber</code></li>
+        </ul>
+      </li>
+      <li>Copy the following methods from the <code>OldMainPage</code> into your <code>MainPage</code> code behind:
+        <ul>
+          <li><code>OnSelectNumber</code></li>
+          <li><code>OnSelectOperator</code></li>
+          <li><code>OnClear</code></li>
+          <li><code>OnCalculate</code></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>Add a Name to the Label</h2>
+    <p>
+    The code behind file now has a dependency against the <code>Label</code> in the XAML - it expects it to be named <code>resultText</code>.
+    </p>
+    <ol>
+      <li>Open the XAML file and give the label the name <code>resultText</code>.</li>
+      <li>Make sure the application now builds properly.</li>
+    </ol>
+
+    <p><a href="#" onclick="toggleCode(this,'resultsLabel');return false;" class="uiitem">Show Code</a><div class="indent-large" id="resultsLabel" style="display:none;">
+<pre class="prettyprint">
+&lt;Label <span class="highlight">x:Name="resultText"</span> Font="Bold,48" BackgroundColor="Black" Text="0"
+          TextColor="White" XAlign="End" YAlign="Center"
+          LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+</pre>
+    </div></p>
+
+    <h2>Set Event Handlers on the Button elements</h2>
+    <p>
+    The last step is to wire up the behavior to the <code>Button</code> elements in the calculator.
+    </p>
+    <ol>
+      <li>Wire up the <code>Clicked</code> event on all the number (0-9) buttons to the <code>OnSelectNumber</code> method.</li>
+      <li>Wire up the <code>Clicked</code> event on all the operator (-,+,*,/) buttons to the <code>OnSelectOperator</code> method.</li>
+      <li>Wire up the <code>Clicked</code> event on the Clear button to the <code>OnClear</code> method.</li>
+      <li>Wire up the <code>Clicked</code> event on the Equal (=) button to the <code>OnCalculate</code> method.</li>
+    </ol>
+
+    <p><a href="#" onclick="toggleCode(this,'wireEvents');return false;" class="uiitem">Show Code</a><div class="indent-large" id="wireEvents" style="display:none;">
+<pre class="prettyprint">
+// Example of wiring up a Clicked event
+&lt;Button Text="7" Grid.Row="1" Grid.Column="0"
+       BackgroundColor="White" TextColor="Black"
+       Font="36" BorderRadius="0" <span class="highlight">Clicked="OnSelectNumber"</span> />
+</pre>
+    </div></p>
+
+    <ol start="5">
+      <li>As a final step, call the <code>OnClear</code> method in the code behind after the <code>InitializeComponent</code> call - this will clear all the fields and set the text initially to zero.</li>
+      <li>Build and run the application on your platform of choice - it should now function properly.</li>
+    </ol>
+
+
+    <h1>Summary</h1>
+    <p>
+    In this exercise, we have created all the code-behind logic for the calculator, wiring it up to the elements created in XAML. If you look through the code, you will find it is primarily oriented around the <em>behavior</em> of the application and less concerned with the UI structure. This is the main benefit of using XAML to define our pages and it allows you to focus the code portion of the app on the logic.
+    </p>
+    <p>
+    There is a completed version of the solution in the <strong>Part 02 Resources</strong> folder.
+    </p>
+
+    <div class="align-right">
+        <a href="javascript:history.back()">Back</a>
+    </div>
+  </section>
+  <footer>Copyright (C) 2014 Xamarin</footer>
+</body>
+
+</html>

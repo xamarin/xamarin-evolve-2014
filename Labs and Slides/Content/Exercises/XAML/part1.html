@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>Xamarin University</title>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+    <script src="./res/js/script.js"></script>
+</head>
+
+<body>
+    <header>XAML in Xamarin.Forms</header>
+    <section id="main">
+
+      <h1>Exercise 1: Create a XAML-based version of Calculator</h1>
+      <h2>Duration</h2>
+      <p>30 minutes</p>
+
+      <h2>Goals</h2>
+      <p>
+      This exercise will take an existing Xamarin.Forms application to display and process a Calculator and convert the UI to be XAML instead of code.
+      </p>
+
+      <h2>Assets</h2>
+      <p>
+      This exercise includes a starter project in the <strong>Part 01 Resources</strong> folder. Make sure you have this folder available before starting the exercise.</p>
+
+      <h2>Challenge</h2>
+      <p>
+      This exercise takes an existing <b>Calculator</b> application which is using C# code to create the UI and generates applications which look like:
+      </p>
+
+      <table>
+        <tr>
+          <td><img src="./res/images/calc-ios.PNG" /></td>
+          <td><img src="./res/images/calc-android.PNG" /></td>
+          <td><img src="./res/images/calc-wp8.PNG" /></td>
+        </tr>
+      </table>
+
+      <p>
+        Your goal will be to remove all the code which creates the UI and replace it with a XAML page to create the same exact UI. Feel free to use the above picture to replicate the UI, here's the basic structure along with a color map (each <strong>B</strong> is a <code>Button</code>).
+      </p>
+
+      <img src="./res/images/UILayout.png" />
+
+      <ul class="indent-large" type="square">
+        <li>The root Grid's <code>BackgroundColor</code> is set to <code>Black</code>.</li>
+        <li>All the columns and rows are star-sized, with the first row being 2X as you can see from the red guidelines.</li>
+        <li>The <code>RowSpacing</code> and <code>ColumnSpacing</code> is set to &quot;1&quot; to provide the black border around the buttons.</li>
+        <li>The <code>BorderRadius</code> for all the buttons is set to &quot;0&quot; to make them square on all the platforms.</li>
+        <li>The <code>FontSize</code> is set to &quot;36&quot; for all the elements except the <code>Label</code> which is using &quot;48&quot;
+      </ul>
+
+      <p>Here are the basic steps you will go through:</p>
+      <ol class="indent-large">
+        <li>Add a new XAML ContentPage to the project.</li>
+        <li>Add the same control definition, using the existing code solution as an example, to the XAML page.</li>
+        <li>Utilize the new XAML ContentPage instead of the code page.</li>
+      </ol>
+
+      <p>If you have worked with XAML before, or find it to be relatively intuitive so far, then try to take the existing code definitions and replicate them in XAML using the above information as a guide - it's helpful to build and run periodically to check your progress. If XAML is unfamiliar, then you can follow along with the steps provided below.</p>
+
+      <h1>Steps</h1>
+      <h2>Open the Starter Solution</h2>
+      <ol>
+          <li>Open the <b>Calculator.sln</b> solution in the <b>Content/Exercises/XAML/Part 01 Resources/Lab.Start</b> folder in Visual Studio (Windows) or Xamarin Studio (Mac).</li>
+          <li>This is a standard Xamarin.Forms application with a Portable Class Library for the shared UI and logic, and a platform-specific project for iOS, Windows Phone and Android.</li>
+          <li>Go ahead and build and run the application to make sure it is all working before we begin making changes. As mentioned earlier, it displays a calculator and allows you to perform simple calculations.</li>
+      </ol>
+
+      <h2>Rename the Existing Page</h2>
+      <p>We are going to replace the existing <code>MainPage</code> with our new XAML version, so go ahead and rename the existing page to <code>OldMainPage</code></p>
+      <ol>
+        <li>Open the <strong>MainPage.cs</strong> file.</li>
+        <li>Right-Click on the <code>MainPage</code> class and select <strong>Refactor > Rename</strong>, or use <strong>&#x2318;R</strong> on OS X or <strong>CTRL+R+R</strong> on Visual Studio while the cursor is on the class name.</li>
+        <li>Rename the file as well if your refactoring did not change it.</li>
+        <li>Compile the app and make sure it builds - you don't need to run it, just make sure nothing is broken before you continue.</li>
+      </ol>
+
+      <h2>Add a new XAML-based Content Page to the project</h2>
+      <p>Next, let's add a new XAML page where we will put the new UI definition.</p>
+      <ol>
+        <li>Add a new file to the PCL project - select the <strong>Forms > Forms ContentPage Xaml</strong> template in Xamarin Studio, and <strong>Forms Xaml Page</strong> in Visual Studio as shown below.</li>
+        <img class="indent-none" style="border:1px solid #c0c0c0" src="./res/images/XS-NewItem.png" /><br />
+        <img class="indent-none" src="./res/images/VS-NewItem.png" />
+        <li>Name the file <strong>MainPage</strong> as shown above.</li>
+      </ol>
+
+      <h2>Create the User Interface</h2>
+      <p>Review what you are creating by looking at the screen shots at the start of this exercise.</p>
+      <ol>
+        <li>Open the <strong>MainPage.xaml</strong> file.</li>
+        <li>Add a <code>Grid</code> as the first child tag in the <code>ContentPage</code>, if there is an existing <code>Label</code> just replace it with the <code>Grid</code>.</li>
+        <li>Set the following properties on the <code>Grid</code>:
+          <ul class="indent-none">
+            <li><code>Padding</code>: &quot;5,0&quot;</li>
+            <li><code>RowSpacing</code>: &quot;1&quot;</li>
+            <li><code>ColumnSpacing</code>: &quot;1&quot;</li>
+            <li><code>BackgroundColor</code>: &quot;Black&quot;</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="hintblock">
+       Remember you can remove the <code>ContentPage.Content</code> tags, or leave them in if you prefer to be explicit. Since the default content property for the <code>ContentPage</code> <em>is</em> the content, the result will be the same. Depending on the IDE you used to create the template, the tags may be present or absent.
+      </div>
+
+      <p><a href="#" onclick="toggleCode(this,'rootGrid');return false;" class="uiitem">Show Code</a><div class="indent-large" id="rootGrid" style="display:none;">
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;ContentPage x:Class="Calculator.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    &lt;Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+
+    &lt;/Grid>
+
+&lt;/ContentPage>
+</pre>
+      </div></p>
+
+      <ol start="4">
+        <li>Add <code>RowDefinition</code> and <code>ColumnDefinition</code> elements to create a 4x6 grid - we want 4 columns and 6 rows, with the first row being 2X the size of all the others. All of the columns should be equally sized.</li>
+        <li>Here's the first row and column definition to show you the syntax:</li>
+      </ol>
+<pre class="codeblock prettyprint">
+&lt;Grid ...>
+   &lt;Grid.RowDefinitions>
+      &lt;RowDefinition Height="2*" />
+   &lt;/Grid.RowDefinitions>
+
+   &lt;Grid.ColumnDefinitions>
+      &lt;ColumnDefinition Width="*" />
+   &lt;/Grid.ColumnDefinitions>
+&lt;/Grid>
+</pre>
+     <p><a href="#" onclick="toggleCode(this,'gridDef');return false;" class="uiitem">Show Code</a><div class="indent-large" id="gridDef" style="display:none;">
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;ContentPage x:Class="Calculator.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    &lt;Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+       &lt;Grid.RowDefinitions>
+          &lt;RowDefinition Height="2*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+       &lt;/Grid.RowDefinitions>
+
+       &lt;Grid.ColumnDefinitions>
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+       &lt;/Grid.ColumnDefinitions>
+    &lt;/Grid>
+
+&lt;/ContentPage>
+</pre>
+    </div></p>
+     <ol start="6">
+        <li>Add a <code>Label</code> into the first row, have it span all four columns by setting the <code>Grid.ColumnSpan</code> attached property, and set the following properties:
+          <ul class="indent-none">
+            <li><code>Font</code>: &quot;Bold,48&quot;</li>
+            <li><code>BackgroundColor</code>: &quot;Black&quot;</li>
+            <li><code>Text</code>: &quot;0&quot;</li>
+            <li><code>TextColor</code>: &quot;White&quot;</li>
+            <li><code>XAlign</code>: &quot;End&quot;</li>
+            <li><code>YAlign</code>: &quot;Center&quot;</li>
+            <li><code>LineBreakMode</code>: &quot;NoWrap&quot;</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><a href="#" onclick="toggleCode(this,'LabelDef');return false;" class="uiitem">Show Code</a><div class="indent-large" id="LabelDef" style="display:none;">
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;ContentPage x:Class="Calculator.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    &lt;Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+       &lt;Grid.RowDefinitions>
+          &lt;RowDefinition Height="2*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+       &lt;/Grid.RowDefinitions>
+
+       &lt;Grid.ColumnDefinitions>
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+       &lt;/Grid.ColumnDefinitions>
+
+       <span class="highlight">&lt;Label Font="Bold,48" BackgroundColor="Black" Text="0"
+              TextColor="White" XAlign="End" YAlign="Center"
+              LineBreakMode="NoWrap" Grid.ColumnSpan="4" /></span>
+    &lt;/Grid>
+&lt;/ContentPage>
+</pre>
+    </div></p>
+    <ol start="7">
+      <li>
+        Add all the buttons into the UI, placing them into each row and column as appropriate. Use the color map to set the <code>BackgroundColor</code> and <code>TextColor</code> based on the app screenshot. In addition, on each button set the <code>Font</code> to &quot;36&quot; and the <code>BorderRadius</code> to &quot;0&quot;.
+      </li>
+    </ol>
+    <p><a href="#" onclick="toggleCode(this,'buttonDefs');return false;" class="uiitem">Show Code</a><div class="indent-large" id="buttonDefs" style="display:none;">
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;ContentPage x:Class="Calculator.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    &lt;Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+       &lt;Grid.RowDefinitions>
+          &lt;RowDefinition Height="2*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+          &lt;RowDefinition Height="*" />
+       &lt;/Grid.RowDefinitions>
+
+       &lt;Grid.ColumnDefinitions>
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+          &lt;ColumnDefinition Width="*" />
+       &lt;/Grid.ColumnDefinitions>
+
+       &lt;Label Font="Bold,48" BackgroundColor="Black" Text="0"
+              TextColor="White" XAlign="End" YAlign="Center"
+              LineBreakMode="NoWrap" Grid.ColumnSpan="4" />
+<span class="highlight">
+       &lt;Button Text="7" Grid.Row="1" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="8" Grid.Row="1" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="9" Grid.Row="1" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+
+       &lt;Button Text="4" Grid.Row="2" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="5" Grid.Row="2" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="6" Grid.Row="2" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+
+       &lt;Button Text="1" Grid.Row="3" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="2" Grid.Row="3" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="3" Grid.Row="3" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+       &lt;Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+               BackgroundColor="White" TextColor="Black"
+               Font="36" BorderRadius="0" />
+
+       &lt;Button Text="/" Grid.Row="1" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+       &lt;Button Text="X" Grid.Row="2" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+       &lt;Button Text="-" Grid.Row="3" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+       &lt;Button Text="+" Grid.Row="4" Grid.Column="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+
+       &lt;Button Text="C" Grid.Row="5" Grid.Column="0"
+                BackgroundColor="#808080" TextColor="White"
+                Font="36" BorderRadius="0" />
+
+       &lt;Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                BackgroundColor="#FFA500" TextColor="White"
+                Font="36" BorderRadius="0" />
+</span>
+    &lt;/Grid>
+&lt;/ContentPage>
+</pre>
+    </div></p>
+
+    <h2>Use the new MainPage</h2>
+      <ol>
+        <li>Open the <strong>App.cs</strong> source file.</li>
+        <li>In the <code>GetMainPage</code> method, create and return a new <code>MainPage</code> object - this is your XAML page. This should replace the existing <code>OldMainPage</code> which is there now.</li>
+        <li>Run the application and make sure it displays the calculator UI - it won't be functional yet since we've not wired up any behavior, but it should look identical to how we started.</li>
+      </ol>
+      <p><a href="#" onclick="toggleCode(this,'getMainPage');return false;" class="uiitem">Show Code</a><div class="indent-large" id="getMainPage" style="display:none;">
+<pre class="prettyprint">
+public class App
+{
+    public static Page GetMainPage()
+    {
+      <span class="highlight">return new MainPage();</span>
+    }
+}
+</pre>
+      </div></p>
+
+    <h1>Summary</h1>
+    <p>
+    In this exercise, you have taken an existing Xamarin.Forms application that defined the UI in C# code and converted it to use XAML for the UI defintion. You utilized attached properties, the property-element syntax and moved a large chunk of code into a declarative XML file.
+    </p>
+    <p>
+    There is a completed version of the lab exercise in the resources folder.</p>
+
+    <div class="align-right">
+        <a href="javascript:history.back()">Back</a>
+    </div>
+
+  </section>
+  <footer>Copyright (C) 2014 Xamarin</footer>
+
+</body>
+
+</html>

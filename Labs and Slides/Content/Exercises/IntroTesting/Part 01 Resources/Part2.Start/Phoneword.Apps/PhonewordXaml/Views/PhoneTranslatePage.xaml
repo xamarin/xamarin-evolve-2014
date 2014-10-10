@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="Phoneword.UI.XamForms.Views.PhoneTranslatePage">
+  <ContentPage.Content>
+    <StackLayout Padding="20">
+      <Label Text="Enter a Phoneword" />
+      <Entry Text="{Binding PhoneNumberText}" Placeholder="1-855-XAMARIN"></Entry>
+      <Button Text="Translate" Command="{Binding TranslateCommand}"></Button>
+      <Button Text="{Binding CallButtonDisplay}" Command="{Binding CallCommand}"></Button>
+      <Button Text="Call History" Command="{Binding CallHistoryCommand}"></Button>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

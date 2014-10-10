@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="8dp">
+    <TextView
+        android:text="Common Name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/commonNameText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true" />
+    <TextView
+        android:text="Scientific Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/commonNameText"
+        android:id="@+id/scientificNameText"
+        android:textStyle="italic"
+        android:layout_marginLeft="4dp" />
+    <TextView
+        android:text="Family Name"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scientificNameText"
+        android:id="@+id/familyNameText"
+        android:layout_marginLeft="6dp"
+        android:textColor="@android:color/darker_gray" />
+    <TextView
+        android:text="Subfamily Name"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subfamilyNameText"
+        android:layout_below="@+id/scientificNameText"
+        android:layout_toRightOf="@+id/familyNameText"
+        android:layout_marginLeft="8dp"
+        android:textColor="@android:color/darker_gray" />
+</RelativeLayout>
