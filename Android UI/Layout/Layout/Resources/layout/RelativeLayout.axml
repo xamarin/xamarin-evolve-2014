@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout1">
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:id="@+id/first"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/azure"
+        android:layout_margin="8dp" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/first"
+        android:id="@+id/second"
+        android:background="@color/coral"
+        android:layout_margin="8dp" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/third"
+        android:background="@color/gainsboro"
+        android:layout_toRightOf="@id/second"
+        android:layout_below="@id/first"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/fourth"
+        android:layout_margin="8dp"
+        android:background="@color/green_peas"
+        android:layout_alignTop="@id/first"
+        android:layout_alignLeft="@id/first"
+        android:layout_alignBottom="@id/first" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/third"
+        android:id="@+id/fifth"
+        android:background="@color/maize"
+        android:layout_alignLeft="@id/third"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/third" />
+</RelativeLayout>

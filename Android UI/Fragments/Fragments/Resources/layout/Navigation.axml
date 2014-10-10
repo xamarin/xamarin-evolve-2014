@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dp">
+    <Button
+        android:text="Add Fragment Via Code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addFragmentViaCode" />
+    <Button
+        android:text="Replace Fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/replaceFragment"
+        android:layout_marginTop="8dp" />
+    <Button
+        android:text="Send Data to Fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendDataToFragment"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
