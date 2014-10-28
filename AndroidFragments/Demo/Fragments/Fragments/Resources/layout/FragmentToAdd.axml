@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@color/carbon_gray">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/currentTime"
+        android:gravity="center"
+        android:layout_margin="4dp"
+        android:typeface="normal"
+        android:textColor="@color/anti_flash_white"
+        android:textSize="36sp"
+        android:shadowColor="@color/dark_slate_gray"
+        android:shadowRadius=".2"
+        android:shadowDy="3"
+        android:text="Default"
+        android:background="@color/carbon_gray" />
+</LinearLayout>

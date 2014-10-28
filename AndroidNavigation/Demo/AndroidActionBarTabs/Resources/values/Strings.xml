@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Evolve 2014 - Tabs 1</string>
+	<string name="animals_tab_label">Animals</string>
+	<string name="events_tab_label">Events</string>
+	<string name="about_tab_label">About</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:paddingBottom="4dp">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/headshotImageView"
+        android:layout_centerVertical="true" />
+    <TextView
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/animalNameTextView"
+        android:layout_below="@+id/animalNameTextView"
+        android:layout_toRightOf="@+id/headshotImageView"
+        android:paddingLeft="5dp" />
+    <TextView
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/twitterTextView"
+        android:layout_below="@+id/animalNameTextView"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp" />
+    <TextView
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speciesNameTextView"
+        android:layout_toLeftOf="@+id/twitterTextView"
+        android:layout_below="@+id/animalNameTextView"
+        android:layout_toRightOf="@+id/headshotImageView"
+        android:paddingLeft="15dp" />
+</LinearLayout>
